@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="db13ae94c67988d66d05ef839490a86b175a468f76a79b7e41e60f0421ec1031.html">Employee Data</a></span>
+                > <span class="truncate-60"><a
+                    href="46314e8496b59defcc11c3b2485c0e1c6859641e052930c72c5c9fd0f94c9c3c.html">RES ED05 HRIS </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 10-05-2024 04:59</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Employee Data</span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">RES ED05 HRIS
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" Given that I'm logged in to HR space as 'admin Jefra Kathleen Ann SORIANO'" width="941"/>
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" Given that I'm logged in to HR space using 'a_jsoriano' account" width="941"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'a_jsoriano' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: a_jsoriano" width="1931"/>
+                <img src="cfa70f0e94a8e149d263179a0545c6c40505e0697b905dbb83b1bf92993c9bfa.png" title=" Then user inputs username: a_jsoriano (completed)" width="1931"/>
+                <img src="cfa70f0e94a8e149d263179a0545c6c40505e0697b905dbb83b1bf92993c9bfa.png" title=" Then user inputs password: sherLOCKEDholmes11#" width="1931"/>
+                <img src="5f5abf549c966b1dde16f91e672d22c62ded7f5bd325af6edf0b2cc7e21c1710.png" title=" Then user inputs password: sherLOCKEDholmes11# (completed)" width="1931"/>
+                <img src="5f5abf549c966b1dde16f91e672d22c62ded7f5bd325af6edf0b2cc7e21c1710.png" title=" Then user clicks login button" width="1931"/>
+                <img src="39d73a6e2c9732ae605f2ba8579ad53df1c62ba98e865125721e74e50472bfd1.png" title=" Then user clicks login button" width="1931"/>
+                <img src="0f266839c52ad0c5768d59f92aff4eed4b74947d7270ae946bf17b76896f0f9e.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="0f266839c52ad0c5768d59f92aff4eed4b74947d7270ae946bf17b76896f0f9e.png" title=" Given that I'm logged in to HR space using 'a_jsoriano' account (completed)" width="1931"/>
+                <img src="0f266839c52ad0c5768d59f92aff4eed4b74947d7270ae946bf17b76896f0f9e.png" title=" Given that I'm logged in to HR space as 'admin Jefra Kathleen Ann SORIANO' (completed)" width="1931"/>
+                <img src="a5ba88d095d2ef49a9fdccb87342df7b613536be4002e982fe061b66599cc519.png" title=" When i search for an employee using the header search bar: Adelyn Hernandez" width="1931"/>
+                <img src="a5ba88d095d2ef49a9fdccb87342df7b613536be4002e982fe061b66599cc519.png" title=" When i search employee: Adelyn Hernandez" width="1931"/>
+                <img src="a5ba88d095d2ef49a9fdccb87342df7b613536be4002e982fe061b66599cc519.png" title=" When i click all actions" width="1931"/>
+                <img src="92ae8aefdf85eec77bb9df6a4ca3e30a9211c21288370b3102b828f547c2b578.png" title=" When i click all actions (completed)" width="1931"/>
+                <img src="92ae8aefdf85eec77bb9df6a4ca3e30a9211c21288370b3102b828f547c2b578.png" title=" When i search profile" width="1931"/>
+                <img src="db337a83aa192cd1ccf8ee475579269dbeaf921c5b1fbdd1a6d6ed88eb8387b2.png" title=" When i search profile (completed)" width="1931"/>
+                <img src="db337a83aa192cd1ccf8ee475579269dbeaf921c5b1fbdd1a6d6ed88eb8387b2.png" title=" When i click profile" width="1931"/>
+                <img src="7c7cf6d377e36a8a41341bdd8150236ec9532d938331d3291891f5636280c8b9.png" title=" When i click profile (completed)" width="1931"/>
+                <img src="f7d463c3695b07a903d70a90fa0439aa050673fe6c266f4e90bee04c47d21484.png" title=" When i search for an employee using the header search bar: Adelyn Hernandez (completed)" width="1931"/>
+                <img src="c5d388c5521c4b03b8a86b7382f73949ad7f74942e439fc3f9502b2d5cabcb40.png" title=" When i go to biographical info" width="1931"/>
+                <img src="6057cacb22a54bdd4d34fa75b6586605a1852c4f3ba3c140336bbbf8d7cb854a.png" title=" When i go to biographical info" width="1931"/>
+                <img src="aad0bd27275a5dc6110946b0caaaade75e083f441836f4e5d2c69d07a137b6e2.png" title=" When i go to biographical info" width="1931"/>
+                <img src="8ed3bceccce319d5b4ebd5a08ad67b63c538aefd092d7954beb5098c50867c58.png" title=" When i go to biographical info (completed)" width="1931"/>
+                <img src="1c318c36f62445f1f4dd4c1bf6fe6dbbba04b1ccec041b501a5415e7c17392b3.png" title=" Then the edit property of RES employee for biographical info fields for HRIS should be correctly set" width="1931"/>
+                <img src="1c318c36f62445f1f4dd4c1bf6fe6dbbba04b1ccec041b501a5415e7c17392b3.png" title=" Then the read and write property of biographical info fields should be correct: readonly, editable, editable, editable, editable, &lt;null&gt;, editable" width="1931"/>
+                <img src="3ce1f64a672b9b956f766c8ad13becefaaa63bc3cacc295658afb02ac1b10056.png" title=" Then the read and write property of biographical info fields should be correct: readonly, editable, editable, editable, editable, &lt;null&gt;, editable" width="1931"/>
+                <img src="14710f3f6333fa79309a0f4a1b1ce2978837740cad03a2b179864ca518b24657.png" title=" Then the field should be editable: Date of birth, Biographical Info" width="1931"/>
+                <img src="cb10e8b3a6b5417214a2b65ef74b9caca358f14c16e0b615ee9bda636055b0df.png" title=" Then the field should be editable: Date of birth, Biographical Info" width="1931"/>
+                <img src="21c7c2e2dd01edf96c3f7b8c28dcdbec9ec14de6b3eb9ce4e006559fb3aa18e9.png" title=" Then the field should be editable: Date of birth, Biographical Info" width="1931"/>
+                <img src="6a5a0d9a4cb44f21fd98152564e5c18be2ded827b0b1339448a4aa805fb6deb6.png" title=" Then the field should be editable: Date of birth, Biographical Info (completed)" width="1931"/>
+                <img src="6a5a0d9a4cb44f21fd98152564e5c18be2ded827b0b1339448a4aa805fb6deb6.png" title=" Then the field should be editable: Town of birth, Biographical Info" width="1931"/>
+                <img src="d2e2582b6cada6d3baf8dc476ac66d9068e797c02058bd407a1181594b8c9f20.png" title=" Then the field should be editable: Town of birth, Biographical Info" width="1931"/>
+                <img src="e126491a2bb557f27830fe934ae49f4d72403b769db8e82d25e81c004bddf7d8.png" title=" Then the field should be editable: Town of birth, Biographical Info" width="1931"/>
+                <img src="f2eb080df4b2967331f133fe625f6d9fcd770292b78a28d63364567873fe64d6.png" title=" Then the field should be editable: Town of birth, Biographical Info (completed)" width="1931"/>
+                <img src="f2eb080df4b2967331f133fe625f6d9fcd770292b78a28d63364567873fe64d6.png" title=" Then the field should be editable: County of birth, Biographical Info" width="1931"/>
+                <img src="2698354062954394a0957f0042e6d96f0cddb31b9a3346161d27454033fed13f.png" title=" Then the field should be editable: County of birth, Biographical Info" width="1931"/>
+                <img src="1fca92bcf64ac08989742464b3c6401ae08aabfeb1bcc4ba2bf9b12de62b69fe.png" title=" Then the field should be editable: County of birth, Biographical Info" width="1931"/>
+                <img src="04d7b019e49649109fa907087c986d515cd5def1345c540a8b82aa5555a0e5f5.png" title=" Then the field should be editable: County of birth, Biographical Info (completed)" width="1931"/>
+                <img src="04d7b019e49649109fa907087c986d515cd5def1345c540a8b82aa5555a0e5f5.png" title=" Then the field should be editable: Country Of Birth, Biographical Info" width="1931"/>
+                <img src="417f528b6b8b22188b55f809b4dbd8dd6de39777617cdf0d32e83671dfc9398e.png" title=" Then the field should be editable: Country Of Birth, Biographical Info" width="1931"/>
+                <img src="925101dc52ff305bf2a8a24a51f601fdacaedd5d03bedbc1d56e734010446722.png" title=" Then the field should be editable: Country Of Birth, Biographical Info" width="1931"/>
+                <img src="9a544a022ef4c4500787109c88576229cae358654ee4bfee750d1f801002b848.png" title=" Then the field should be editable: Country Of Birth, Biographical Info (completed)" width="1931"/>
+                <img src="9a544a022ef4c4500787109c88576229cae358654ee4bfee750d1f801002b848.png" title=" Then the field should not be present: Date of death, Biographical Info" width="1931"/>
+                <img src="9e55f256e3ebed0ee5a0e9cf184e51ab22c47d8e4bbdf1fa255a454511702f45.png" title=" Then the field should not be present: Date of death, Biographical Info (completed)" width="1931"/>
+                <img src="9e55f256e3ebed0ee5a0e9cf184e51ab22c47d8e4bbdf1fa255a454511702f45.png" title=" Then the field should be editable: Interface Routing, Biographical Info" width="1931"/>
+                <img src="ffa4a346e542ce30f3df518e81654793ee313eaec0dbd1bcb2369464f6e3e7ba.png" title=" Then the field should be editable: Interface Routing, Biographical Info" width="1931"/>
+                <img src="3e70d6211bd3ddecda618612dc77064e53f73e2c50b1843385e88fda39bacfc0.png" title=" Then the field should be editable: Interface Routing, Biographical Info" width="1931"/>
+                <img src="bb243e88d023f10c1d6e94935e204b861e5b5efddbe38082f87c2805b468bfa5.png" title=" Then the field should be editable: Interface Routing, Biographical Info (completed)" width="1931"/>
+                <img src="bb243e88d023f10c1d6e94935e204b861e5b5efddbe38082f87c2805b468bfa5.png" title=" Then the read and write property of biographical info fields should be correct: readonly, editable, editable, editable, editable, &lt;null&gt;, editable (completed)" width="1931"/>
+                <img src="bb243e88d023f10c1d6e94935e204b861e5b5efddbe38082f87c2805b468bfa5.png" title=" Then the edit property of RES employee for biographical info fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="30e70843e900d8b6e9ebe48b198e2f4330a173ec853a110a833b6e1ece600a0e.png" title=" When i go to personal info" width="1931"/>
+                <img src="2925ae2184a5f7184584f992d888e8b59420fab9e4e0fcae2e4add59e576cbb0.png" title=" When i go to personal info" width="1931"/>
+                <img src="e3624370cf638bad63e432aafb49f35e7e01c0f1f8541027c90a3639016c4ec3.png" title=" When i go to personal info (completed)" width="1931"/>
+                <img src="a8d473369cbff0c478ff52aaa04219e856e668ba8b04f695310e323313747325.png" title=" Then the edit property of RES employee for personal info fields for HRIS should be correctly set" width="1931"/>
+                <img src="a8d473369cbff0c478ff52aaa04219e856e668ba8b04f695310e323313747325.png" title=" Then the read and write property of personal info should be correct: editable, editable, editable, editable, view, view, editable, editable, editable, editable, editable, editable, editable, &lt;null&gt;, &lt;null&gt;, editable, editable, readonly, editable" width="1931"/>
+                <img src="a8d473369cbff0c478ff52aaa04219e856e668ba8b04f695310e323313747325.png" title=" Then the field should be editable: Title, Personal Information" width="1931"/>
+                <img src="7fd0372c4628123af94a7e424a72eb09c1c3d37fb5c4d9636f3b59f91d5a1958.png" title=" Then the field should be editable: Title, Personal Information" width="1931"/>
+                <img src="38d595f6094d16d905b4a89ccfb8f664f5ac27b4f76b65ab25f4257626cd59e7.png" title=" Then the field should be editable: Title, Personal Information (completed)" width="1931"/>
+                <img src="38d595f6094d16d905b4a89ccfb8f664f5ac27b4f76b65ab25f4257626cd59e7.png" title=" Then the field should be editable: First Name, Personal Information" width="1931"/>
+                <img src="071a5d77839617ff0d388ad8ec23ea480d9e17b43b334b6bb0f5c622ab399f1f.png" title=" Then the field should be editable: First Name, Personal Information" width="1931"/>
+                <img src="26bcc35af3f17d68ce2401f6b72b9b173f26aa0b92e63487b2987d2b5c7a56a1.png" title=" Then the field should be editable: First Name, Personal Information" width="1931"/>
+                <img src="14a0828ecf7736b9e813bc5f66033f68ecd6b3e86c75a0f6ec83d58df1ca2ef0.png" title=" Then the field should be editable: First Name, Personal Information (completed)" width="1931"/>
+                <img src="14a0828ecf7736b9e813bc5f66033f68ecd6b3e86c75a0f6ec83d58df1ca2ef0.png" title=" Then the field should be editable: Last Name, Personal Information" width="1931"/>
+                <img src="0c755bc27e58f5a525a86289b5a653717cf930cd728679a0d8b915225be27c2d.png" title=" Then the field should be editable: Last Name, Personal Information" width="1931"/>
+                <img src="40e89fbb74a01ea034fabd5334aab89a52962f354199fb54255e93d5d22e9225.png" title=" Then the field should be editable: Last Name, Personal Information" width="1931"/>
+                <img src="a085d0ee143fa0f55f3ed5277813984712ab8a7afe40e030478a58762c92739a.png" title=" Then the field should be editable: Last Name, Personal Information (completed)" width="1931"/>
+                <img src="a085d0ee143fa0f55f3ed5277813984712ab8a7afe40e030478a58762c92739a.png" title=" Then the field should be editable: Maiden Name, Personal Information" width="1931"/>
+                <img src="7d884dd78e94b7604bc49723d67bb74cdfda5db4dd2d2fc702c915e9ff9ce0c5.png" title=" Then the field should be editable: Maiden Name, Personal Information" width="1931"/>
+                <img src="6fff95ca91f6348bc9b92ba2c10e93b8475c878fec41127469e55578659b5f37.png" title=" Then the field should be editable: Maiden Name, Personal Information" width="1931"/>
+                <img src="0fbca75522551b194c0cbdd598b8d267da5375a83ca5913e5fcc37034bb680ff.png" title=" Then the field should be editable: Maiden Name, Personal Information (completed)" width="1931"/>
+                <img src="0fbca75522551b194c0cbdd598b8d267da5375a83ca5913e5fcc37034bb680ff.png" title=" Then the field should be view only: Preferred First Name, Personal Information" width="1931"/>
+                <img src="595c8ab0a20199caeca6e82bcaf1e1b6436b3b07e2adc4a6113f9110c7e421a5.png" title=" Then the field should be view only: Preferred First Name, Personal Information (completed)" width="1931"/>
+                <img src="595c8ab0a20199caeca6e82bcaf1e1b6436b3b07e2adc4a6113f9110c7e421a5.png" title=" Then the field should be view only: Preferred Last Name, Personal Information" width="1931"/>
+                <img src="595c8ab0a20199caeca6e82bcaf1e1b6436b3b07e2adc4a6113f9110c7e421a5.png" title=" Then the field should be view only: Preferred Last Name, Personal Information (completed)" width="1931"/>
+                <img src="595c8ab0a20199caeca6e82bcaf1e1b6436b3b07e2adc4a6113f9110c7e421a5.png" title=" Then the field should be editable: Gender, Personal Information" width="1931"/>
+                <img src="ea5e6a3adeb30e5489be063afb1d4f7095db1906bc958a7234dd6cf0c3f4d588.png" title=" Then the field should be editable: Gender, Personal Information" width="1931"/>
+                <img src="6850c429b55e4ca42856a5b4b57678bcd222e903d373bfe937f56e17b59cd101.png" title=" Then the field should be editable: Gender, Personal Information" width="1931"/>
+                <img src="b4bede874d1796348ee7804fe86de95b1fdf0e429386c5503bbc8f864f5cc709.png" title=" Then the field should be editable: Gender, Personal Information (completed)" width="1931"/>
+                <img src="b4bede874d1796348ee7804fe86de95b1fdf0e429386c5503bbc8f864f5cc709.png" title=" Then the field should be editable: Nationality at birth, Personal Information" width="1931"/>
+                <img src="577a1be01cbd1a9c3b73659a9019a8195f7762f2671e8d627a4a10ceb7ddc675.png" title=" Then the field should be editable: Nationality at birth, Personal Information" width="1931"/>
+                <img src="4772e70fd9e6cfce161df1d2bac909c9292da0234e3661276a085c1c244ada84.png" title=" Then the field should be editable: Nationality at birth, Personal Information" width="1931"/>
+                <img src="de8b9f49a1f7a26092f747e43adc3e247c608458905d73cdca90b45c26fd4a76.png" title=" Then the field should be editable: Nationality at birth, Personal Information (completed)" width="1931"/>
+                <img src="de8b9f49a1f7a26092f747e43adc3e247c608458905d73cdca90b45c26fd4a76.png" title=" Then the field should be editable: Current nationality, Personal Information" width="1931"/>
+                <img src="57eb3187f71b304d56c886c7835e672d6e0f9688cb2e33a6db682a1da15a0ad2.png" title=" Then the field should be editable: Current nationality, Personal Information" width="1931"/>
+                <img src="411a9543cf8b859f10bc9da1c4db87afad5ff694de41bcaa2ba03bb20f40322f.png" title=" Then the field should be editable: Current nationality, Personal Information" width="1931"/>
+                <img src="18f97f24794c07eae7b01fdc288fd2f810e351f01e90cef95ad248634a322c34.png" title=" Then the field should be editable: Current nationality, Personal Information (completed)" width="1931"/>
+                <img src="18f97f24794c07eae7b01fdc288fd2f810e351f01e90cef95ad248634a322c34.png" title=" Then the field should be editable: Other nationality, Personal Information" width="1931"/>
+                <img src="a44d851b35cf876c95af4fa2cd76f335fad4132cda377b54e833fdcc6293dc3d.png" title=" Then the field should be editable: Other nationality, Personal Information" width="1931"/>
+                <img src="61eb4ae359853579e328bf54f337bbd6d4e691e376a5a0106e5006b27af884ee.png" title=" Then the field should be editable: Other nationality, Personal Information" width="1931"/>
+                <img src="7359cccd43f74264b8393a97e317333a920365e15c412f1d9728a878271a97f9.png" title=" Then the field should be editable: Other nationality, Personal Information (completed)" width="1931"/>
+                <img src="7359cccd43f74264b8393a97e317333a920365e15c412f1d9728a878271a97f9.png" title=" Then the field should be editable: Marital Status, Personal Information" width="1931"/>
+                <img src="ce795c144203b3d67f9338e822347de8e5ffcf7452429748160ebe58d7c4ad64.png" title=" Then the field should be editable: Marital Status, Personal Information" width="1931"/>
+                <img src="f29fd835b924647fc6553cc706fe4cb07ef9be588d744d25ab1ee4de3722d4b2.png" title=" Then the field should be editable: Marital Status, Personal Information" width="1931"/>
+                <img src="f87101e8695777463ae72cceacaa2b211e6cbb994fb35e570f12011cc6d76f01.png" title=" Then the field should be editable: Marital Status, Personal Information (completed)" width="1931"/>
+                <img src="f87101e8695777463ae72cceacaa2b211e6cbb994fb35e570f12011cc6d76f01.png" title=" Then the field should be editable: Marital Status Since, Personal Information" width="1931"/>
+                <img src="696700e51af504c7561a0d8e04bf890135ae3f96f5ea4b2dada6cc7a2e9135df.png" title=" Then the field should be editable: Marital Status Since, Personal Information" width="1931"/>
+                <img src="3f3bddc703565435f57a0579a3542c82d1663fb00aa6217d288ba7ae041828bf.png" title=" Then the field should be editable: Marital Status Since, Personal Information" width="1931"/>
+                <img src="5e2fb55bda0e12ed347d85f4c404aebca1ca144a1059c15367dd1725f7a92099.png" title=" Then the field should be editable: Marital Status Since, Personal Information (completed)" width="1931"/>
+                <img src="5e2fb55bda0e12ed347d85f4c404aebca1ca144a1059c15367dd1725f7a92099.png" title=" Then the field should be editable: Mailing Preferred Language, Personal Information" width="1931"/>
+                <img src="21a80f281165f2c20ef53c0b47f07a590e2359365ab0fe75189da27161a30950.png" title=" Then the field should be editable: Mailing Preferred Language, Personal Information" width="1931"/>
+                <img src="abf2e293eaa5645f65a1cbfa5988b21b4da8035e6b9c041b1f9c1bcd2c034f2a.png" title=" Then the field should be editable: Mailing Preferred Language, Personal Information" width="1931"/>
+                <img src="3b6856425c0786b4d09bb7ae53a10103ce607564138af214202998115de7e9eb.png" title=" Then the field should be editable: Mailing Preferred Language, Personal Information (completed)" width="1931"/>
+                <img src="3b6856425c0786b4d09bb7ae53a10103ce607564138af214202998115de7e9eb.png" title=" Then the field should not be present: Religion, Personal Information" width="1931"/>
+                <img src="0a09e0247fafbc6dd68dd840be866b9087a291ac1863de2aee99c70ca224466e.png" title=" Then the field should not be present: Religion, Personal Information (completed)" width="1931"/>
+                <img src="0a09e0247fafbc6dd68dd840be866b9087a291ac1863de2aee99c70ca224466e.png" title=" Then the field should not be present: Ethnic group, Personal Information" width="1931"/>
+                <img src="71ae43f94c8f7341b207b7881de511cea95ab3f4b0cb9beb9466dfbd6ec33ba6.png" title=" Then the field should not be present: Ethnic group, Personal Information (completed)" width="1931"/>
+                <img src="71ae43f94c8f7341b207b7881de511cea95ab3f4b0cb9beb9466dfbd6ec33ba6.png" title=" Then the field should be editable: Number of children, Personal Information" width="1931"/>
+                <img src="1df83afc7148e3e97e24f33049a40489a2c1810e5336901dccf72e8afb9b6426.png" title=" Then the field should be editable: Number of children, Personal Information" width="1931"/>
+                <img src="6e6cf08c934fd8789438537bc4339edeb3ef6f912421f5ea853c5ba0149c0ac2.png" title=" Then the field should be editable: Number of children, Personal Information" width="1931"/>
+                <img src="4cbf556010fd3f6acb512b44e5d26178c66eed632e967cbe291ee449a9273dd7.png" title=" Then the field should be editable: Number of children, Personal Information (completed)" width="1931"/>
+                <img src="4cbf556010fd3f6acb512b44e5d26178c66eed632e967cbe291ee449a9273dd7.png" title=" Then the field should be editable: Date of Death, Personal Information" width="1931"/>
+                <img src="2aab8f7ad3697eef7eb55835a715b17d6306b3143406485439f6dfad6beb62e9.png" title=" Then the field should be editable: Date of Death, Personal Information" width="1931"/>
+                <img src="2ff1e5617004d54274bfb7124cac1b3c8760cb15cf2902ec9b10bf00b28fd7a6.png" title=" Then the field should be editable: Date of Death, Personal Information" width="1931"/>
+                <img src="456ba9263ba5163a9c7729e05b532aff2ad0d248a3ee496a45c14c09a075f0b3.png" title=" Then the field should be editable: Date of Death, Personal Information (completed)" width="1931"/>
+                <img src="a176ecf2dffbf32e8992b645204f9f10f3036ee63cbef390e143bdc2f05ed871.png" title=" Then the read and write property of personal info should be correct: editable, editable, editable, editable, view, view, editable, editable, editable, editable, editable, editable, editable, &lt;null&gt;, &lt;null&gt;, editable, editable, readonly, editable" width="1931"/>
+                <img src="6e22de2b2e5190845bf51e9d583f2034dac347c6c518c85487c9d69c9cb63017.png" title=" Then the read and write property of personal info should be correct: editable, editable, editable, editable, view, view, editable, editable, editable, editable, editable, editable, editable, &lt;null&gt;, &lt;null&gt;, editable, editable, readonly, editable" width="1931"/>
+                <img src="780b3482ebd59c27d11dae3b8f7602006ba5129fd0e027f69d1cf7a0a084eb7b.png" title=" Then the field should be editable: Rapid Deployment, Personal Information" width="1931"/>
+                <img src="113fc872ac58bd0ba565168db57ba589d415417c9dcc59ef0f20f762442d6464.png" title=" Then the field should be editable: Rapid Deployment, Personal Information" width="1931"/>
+                <img src="b21d0f4b63f696b6624282919687ea85b9eacdb322acb6acd14015822db4b2d2.png" title=" Then the field should be editable: Rapid Deployment, Personal Information" width="1931"/>
+                <img src="f03b816e6bedaac6c1e09dd46d623d6ff3f3d65f5d2bbefd2fbf793a5b263f20.png" title=" Then the field should be editable: Rapid Deployment, Personal Information (completed)" width="1931"/>
+                <img src="f03b816e6bedaac6c1e09dd46d623d6ff3f3d65f5d2bbefd2fbf793a5b263f20.png" title=" Then the read and write property of personal info should be correct: editable, editable, editable, editable, view, view, editable, editable, editable, editable, editable, editable, editable, &lt;null&gt;, &lt;null&gt;, editable, editable, readonly, editable (completed)" width="1931"/>
+                <img src="f03b816e6bedaac6c1e09dd46d623d6ff3f3d65f5d2bbefd2fbf793a5b263f20.png" title=" Then the edit property of RES employee for personal info fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="30e70843e900d8b6e9ebe48b198e2f4330a173ec853a110a833b6e1ece600a0e.png" title=" When i go to contact info" width="1931"/>
+                <img src="4226459f1e48cc8c8e95acb9e90f9f5eeee40b7a8b35dd6f50ac5e10d2f94df0.png" title=" When i go to contact info" width="1931"/>
+                <img src="157be18a4d64f83c0a5ccb3b2c2e4a6f348024c46878188771f6bcceb793a5ef.png" title=" When i go to contact info (completed)" width="1931"/>
+                <img src="a14e18d9ba887fb32fd1e4ef2d6af37c68e171b8b46a8617b4a709c454bb525a.png" title=" Then the edit property of RES employee for email info fields for HRIS should be correctly set" width="1931"/>
+                <img src="a14e18d9ba887fb32fd1e4ef2d6af37c68e171b8b46a8617b4a709c454bb525a.png" title=" Then the read and write property of email info should be correct: editable, editable, editable" width="1931"/>
+                <img src="a14e18d9ba887fb32fd1e4ef2d6af37c68e171b8b46a8617b4a709c454bb525a.png" title=" Then the field should be editable and add button should be present: Email Type, Contact Information, Email Information" width="1931"/>
+                <img src="a14e18d9ba887fb32fd1e4ef2d6af37c68e171b8b46a8617b4a709c454bb525a.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" Then i check that the field should be editable and add button should be present: Email Type, Contact Information, Email Information" width="1931"/>
+                <img src="aab42e4252d31320ff60db0a17b8a226ca09349078db6b9fc2f470dc01f20bfd.png" title=" Then i check that the field should be editable and add button should be present: Email Type, Contact Information, Email Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Email Type, Contact Information, Email Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Email Type, Contact Information, Email Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Email Address, Contact Information, Email Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="f53e49cb6b9404a1a1493733a0fbc0f4b1458d7d3528fc327931eb8194c330c4.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" Then i check that the field should be editable and add button should be present: Email Address, Contact Information, Email Information" width="1931"/>
+                <img src="aab42e4252d31320ff60db0a17b8a226ca09349078db6b9fc2f470dc01f20bfd.png" title=" Then i check that the field should be editable and add button should be present: Email Address, Contact Information, Email Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Email Address, Contact Information, Email Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Email Address, Contact Information, Email Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Is Primary, Contact Information, Email Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" Then i check that the field should be editable and add button should be present: Is Primary, Contact Information, Email Information" width="1931"/>
+                <img src="aab42e4252d31320ff60db0a17b8a226ca09349078db6b9fc2f470dc01f20bfd.png" title=" Then i check that the field should be editable and add button should be present: Is Primary, Contact Information, Email Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Is Primary, Contact Information, Email Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Is Primary, Contact Information, Email Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the read and write property of email info should be correct: editable, editable, editable (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the edit property of RES employee for email info fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="da1dc2666ea2f90ae2994bea0162ef51287f00375c93fef1221e576df52056ae.png" title=" When i go to contact info" width="1931"/>
+                <img src="8732d17456ae9cb670feba2ea31239467055dafb16b2375f690abd9b7bdcf0c7.png" title=" When i go to contact info" width="1931"/>
+                <img src="157be18a4d64f83c0a5ccb3b2c2e4a6f348024c46878188771f6bcceb793a5ef.png" title=" When i go to contact info (completed)" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" Then the edit property of RES employee for phone info fields for HRIS should be correctly set" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" Then the read and write property of phone info should be correct: editable, editable, editable, editable, editable" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" Then the field should be editable and add button should be present: Phone Type, Contact Information, Phone Information" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" Then i check that the field should be editable and add button should be present: Phone Type, Contact Information, Phone Information" width="1931"/>
+                <img src="aab42e4252d31320ff60db0a17b8a226ca09349078db6b9fc2f470dc01f20bfd.png" title=" Then i check that the field should be editable and add button should be present: Phone Type, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Phone Type, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Phone Type, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Country, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" Then i check that the field should be editable and add button should be present: Country, Contact Information, Phone Information" width="1931"/>
+                <img src="aab42e4252d31320ff60db0a17b8a226ca09349078db6b9fc2f470dc01f20bfd.png" title=" Then i check that the field should be editable and add button should be present: Country, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Country, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Country, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Country Code, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a14e18d9ba887fb32fd1e4ef2d6af37c68e171b8b46a8617b4a709c454bb525a.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" Then i check that the field should be editable and add button should be present: Country Code, Contact Information, Phone Information" width="1931"/>
+                <img src="aab42e4252d31320ff60db0a17b8a226ca09349078db6b9fc2f470dc01f20bfd.png" title=" Then i check that the field should be editable and add button should be present: Country Code, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Country Code, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Country Code, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Phone number - area code and number, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a3be1429067644f6a8817558b79b93fa65658ee87c6d6055ab457f933901c0bc.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="374add1cdecc0e1199a91aab6c60fd8068969b7ecbf62ef22fb0d36a99f956ca.png" title=" Then i check that the field should be editable and add button should be present: Phone number - area code and number, Contact Information, Phone Information" width="1931"/>
+                <img src="255436f6a46efcd2576a05b2de11d4804fd4e38461184650f2913e338515987e.png" title=" Then i check that the field should be editable and add button should be present: Phone number - area code and number, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Phone number - area code and number, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Phone number - area code and number, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Is Primary, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a14e18d9ba887fb32fd1e4ef2d6af37c68e171b8b46a8617b4a709c454bb525a.png" title=" When i click on portlet edit button: Contact Information" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" When i click on portlet edit button: Contact Information (completed)" width="1931"/>
+                <img src="a906fc92bc397b42abd951d39199f36f792e16cd809e2dca8072837aa7ca9996.png" title=" Then i check that the field should be editable and add button should be present: Is Primary, Contact Information, Phone Information" width="1931"/>
+                <img src="255436f6a46efcd2576a05b2de11d4804fd4e38461184650f2913e338515987e.png" title=" Then i check that the field should be editable and add button should be present: Is Primary, Contact Information, Phone Information" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then i check that the field should be editable and add button should be present: Is Primary, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the field should be editable and add button should be present: Is Primary, Contact Information, Phone Information (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the read and write property of phone info should be correct: editable, editable, editable, editable, editable (completed)" width="1931"/>
+                <img src="a1713844941e679f957330efcf2cdb073305a801d83ef834eeeb6174ec6ec680.png" title=" Then the edit property of RES employee for phone info fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="da1dc2666ea2f90ae2994bea0162ef51287f00375c93fef1221e576df52056ae.png" title=" When i go to address" width="1931"/>
+                <img src="746789630610a39daefa6d8b6c1dd6e44506723a09490d2f43b817ee95fc78d2.png" title=" When i go to address" width="1931"/>
+                <img src="5f02e5ea7a64a411d20b06d212d334666f40cfef743bbe457eb09286085800db.png" title=" When i go to address (completed)" width="1931"/>
+                <img src="e7cfc8f996ee75eeb2d12044274b455219a5a60bf54ab58763c709e044543834.png" title=" Then the edit property of RES employee for address info fields for HRIS should be correctly set" width="1931"/>
+                <img src="e7cfc8f996ee75eeb2d12044274b455219a5a60bf54ab58763c709e044543834.png" title=" Then the field should be editable: Only for employees under Swiss contract, Address" width="1931"/>
+                <img src="a076ea4784dbad9f3b15eeaef582f721144e7cc64bdc99cef25da0e2b48578a8.png" title=" Then the field should be editable: Only for employees under Swiss contract, Address" width="1931"/>
+                <img src="64c7c66e2c37537b2118e97bb45fe82ca6e9bab3c86fc35c14372eece74cef1b.png" title=" Then the field should be editable: Only for employees under Swiss contract, Address (completed)" width="1931"/>
+                <img src="64c7c66e2c37537b2118e97bb45fe82ca6e9bab3c86fc35c14372eece74cef1b.png" title=" Then the field should be editable: Address line 1, Address" width="1931"/>
+                <img src="c4e1d8c38053865aeaa43cd971a11bcd9c334e8e1f894c6c716fc86460835828.png" title=" Then the field should be editable: Address line 1, Address" width="1931"/>
+                <img src="22836cb5156eb46a46be617511e1d3bb39dd1f74b925813297eb53c6f3016090.png" title=" Then the field should be editable: Address line 1, Address" width="1931"/>
+                <img src="87f5f91062064dce1b847a98ecea2f000d7a9f86c3eb93b1e2b6d8ed08a4c09f.png" title=" Then the field should be editable: Address line 1, Address (completed)" width="1931"/>
+                <img src="87f5f91062064dce1b847a98ecea2f000d7a9f86c3eb93b1e2b6d8ed08a4c09f.png" title=" Then the field should be editable: Address line 2, Address" width="1931"/>
+                <img src="281b778b6bfd966f448e0f9629be0edb8f0999d65fb57760e4160ccea5690785.png" title=" Then the field should be editable: Address line 2, Address" width="1931"/>
+                <img src="09a0b39e5bd118592c0d536b0351a61360c9bf0f157c7ff7c3565d3b51538c9f.png" title=" Then the field should be editable: Address line 2, Address" width="1931"/>
+                <img src="f7024e25b843f03d724b5dbbe39ba0ed9588cfb9300917e9bdc23df22e647d87.png" title=" Then the field should be editable: Address line 2, Address (completed)" width="1931"/>
+                <img src="f7024e25b843f03d724b5dbbe39ba0ed9588cfb9300917e9bdc23df22e647d87.png" title=" Then the field should be editable: Address line 3, Address" width="1931"/>
+                <img src="784666b3807a6cc1268a987f236560bff8b9ebfa2f1281588ef5115c401e8265.png" title=" Then the field should be editable: Address line 3, Address" width="1931"/>
+                <img src="37590ca7c8f5d0303bc7ef2652d8d79d5335170fbe3a5bb294f2b58402a68629.png" title=" Then the field should be editable: Address line 3, Address" width="1931"/>
+                <img src="4aecd7f3bea53946a47436af0bf5065be231d5277c065001018d512af42395e2.png" title=" Then the field should be editable: Address line 3, Address (completed)" width="1931"/>
+                <img src="4aecd7f3bea53946a47436af0bf5065be231d5277c065001018d512af42395e2.png" title=" Then the field should not be present: Address line 4, Address" width="1931"/>
+                <img src="ae096ac82e985d121d29070a3587de1cd0b9bfd426e1f3fe7d51a3d1cd0b502e.png" title=" Then the field should not be present: Address line 4, Address (completed)" width="1931"/>
+                <img src="ae096ac82e985d121d29070a3587de1cd0b9bfd426e1f3fe7d51a3d1cd0b502e.png" title=" Then the field should be editable: Postal Code, Address" width="1931"/>
+                <img src="48a315c48bcf7b3f829f84f3a10ee014175ba15e9807cfe8e72742b708fc3bcd.png" title=" Then the field should be editable: Postal Code, Address" width="1931"/>
+                <img src="3001dcf0dd6396376ed436231cc380d624618d1bd924cebe7a378c6408d2173c.png" title=" Then the field should be editable: Postal Code, Address" width="1931"/>
+                <img src="0e67e71ec8a2f18ed4df80189300830f82b3b8fd1b740eef787d60c21218e84c.png" title=" Then the field should be editable: Postal Code, Address (completed)" width="1931"/>
+                <img src="0e67e71ec8a2f18ed4df80189300830f82b3b8fd1b740eef787d60c21218e84c.png" title=" Then the field should be editable: Town, Address" width="1931"/>
+                <img src="8c25614e34c71f8a53d9cff24f7cc683a265ab0dcdaac050ba486ce69d6ac3f5.png" title=" Then the field should be editable: Town, Address" width="1931"/>
+                <img src="1a9fe689aafbee8bba230571dc917c3b2a7533caf349f567a1f38887499b28c6.png" title=" Then the field should be editable: Town, Address" width="1931"/>
+                <img src="2f22c0679bb3e676111b12387dc79077756bb50a0f599cce316fe57ac5fbd1b5.png" title=" Then the field should be editable: Town, Address (completed)" width="1931"/>
+                <img src="2f22c0679bb3e676111b12387dc79077756bb50a0f599cce316fe57ac5fbd1b5.png" title=" Then the field should not be present: County, Address" width="1931"/>
+                <img src="d8260a788e84182d497ee1da949f6f3c42db898e45bfa79aad9e2b8be153459a.png" title=" Then the field should not be present: County, Address (completed)" width="1931"/>
+                <img src="d8260a788e84182d497ee1da949f6f3c42db898e45bfa79aad9e2b8be153459a.png" title=" Then the field should be editable: Country, Address" width="1931"/>
+                <img src="a2b54e219a236dd308773063efff0dbdf5b6d4cd88cd0dcafb9aed15a3d08c52.png" title=" Then the field should be editable: Country, Address" width="1931"/>
+                <img src="00845a0f31e325b3ecef475ef66c500b32c839ae6dbd415c234472654f9b0c12.png" title=" Then the field should be editable: Country, Address" width="1931"/>
+                <img src="5e41c6ba8e16c81b47ea4d21ffb42ccca73488b8eb43cefd19feda84f6907725.png" title=" Then the field should be editable: Country, Address (completed)" width="1931"/>
+                <img src="5e41c6ba8e16c81b47ea4d21ffb42ccca73488b8eb43cefd19feda84f6907725.png" title=" Then the edit property of RES employee for address info fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="36ccef01bb02d6cde01c3a145efeb51b821f0d61d27871cbda86d1ab5f6613a4.png" title=" When i go to contact info" width="1931"/>
+                <img src="f345769e4e3fb7a5254315c77309c4896a261e174b2bac24f110f14eb9ceae81.png" title=" When i go to contact info" width="1931"/>
+                <img src="157be18a4d64f83c0a5ccb3b2c2e4a6f348024c46878188771f6bcceb793a5ef.png" title=" When i go to contact info (completed)" width="1931"/>
+                <img src="15b7dcaf79f78d45efe80a85bf1dcac77d6c2f3822d54388c607b0b63b73ee0b.png" title=" Then the edit property of RES employee for emergency contact fields for HRIS should be correctly set" width="1931"/>
+                <img src="15b7dcaf79f78d45efe80a85bf1dcac77d6c2f3822d54388c607b0b63b73ee0b.png" title=" Then the field should be editable: Title and Contact name, Emergency Contact Information" width="1931"/>
+                <img src="1043f0e63612d156cbd50d37747bf8674e1d67ae6174dfea184ec6137f19f517.png" title=" Then the field should be editable: Title and Contact name, Emergency Contact Information" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Title and Contact name, Emergency Contact Information (completed)" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Dependent type, Emergency Contact Information" width="1931"/>
+                <img src="2463e35641dac930189b1112099e3785a25bcb12fe68b7b936871894af57a74b.png" title=" Then the field should be editable: Dependent type, Emergency Contact Information" width="1931"/>
+                <img src="1043f0e63612d156cbd50d37747bf8674e1d67ae6174dfea184ec6137f19f517.png" title=" Then the field should be editable: Dependent type, Emergency Contact Information" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Dependent type, Emergency Contact Information (completed)" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Country, Emergency Contact Information" width="1931"/>
+                <img src="15b7dcaf79f78d45efe80a85bf1dcac77d6c2f3822d54388c607b0b63b73ee0b.png" title=" Then the field should be editable: Country, Emergency Contact Information" width="1931"/>
+                <img src="a7d0261a95c176d3e602ab30e5874cd8cfc429fa8a01e6609754ad8dfa6e6a82.png" title=" Then the field should be editable: Country, Emergency Contact Information" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Country, Emergency Contact Information (completed)" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should not be present: Country code (inherited from country), Emergency Contact Information" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should not be present: Country code (inherited from country), Emergency Contact Information (completed)" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Phone number - Area code and number, Emergency Contact Information" width="1931"/>
+                <img src="15b7dcaf79f78d45efe80a85bf1dcac77d6c2f3822d54388c607b0b63b73ee0b.png" title=" Then the field should be editable: Phone number - Area code and number, Emergency Contact Information" width="1931"/>
+                <img src="1043f0e63612d156cbd50d37747bf8674e1d67ae6174dfea184ec6137f19f517.png" title=" Then the field should be editable: Phone number - Area code and number, Emergency Contact Information" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Phone number - Area code and number, Emergency Contact Information (completed)" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Yes will be contacted first, Emergency Contact Information" width="1931"/>
+                <img src="2463e35641dac930189b1112099e3785a25bcb12fe68b7b936871894af57a74b.png" title=" Then the field should be editable: Yes will be contacted first, Emergency Contact Information" width="1931"/>
+                <img src="1043f0e63612d156cbd50d37747bf8674e1d67ae6174dfea184ec6137f19f517.png" title=" Then the field should be editable: Yes will be contacted first, Emergency Contact Information" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the field should be editable: Yes will be contacted first, Emergency Contact Information (completed)" width="1931"/>
+                <img src="c0c8716ec4c1d574a09057d1832b6437c6d979937d2bab8b98bf5a825ab32ff5.png" title=" Then the edit property of RES employee for emergency contact fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="78a70bc19f719d095b5a9bcee060b1b20c390720937cb4c51068ea87e2c06865.png" title=" When i go to employment details" width="1931"/>
+                <img src="6504eb1468a8a2d91057327b254e4f532686aadcaff091553c6c1287ee24c58a.png" title=" When i go to employment details" width="1931"/>
+                <img src="2ae20fb975d839d9ae52f6a47221285ca9e1dcd8ed5b5d21a1dfe69131e5eced.png" title=" When i go to employment details (completed)" width="1931"/>
+                <img src="0027096b63de669cf56ce521a1db28e8f1ba5ee07ec65545739f8d8728732670.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="d77d217812c31c2e2ff234326dd87fe3db0d8069c142b254f286ddc63bb147b5.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: Start date of 1st ICRC contract, Employment Details" width="1931"/>
+                <img src="1855e75548fde53e59ebefeb65f9ca7abd0c993d7b352c95ea8140d320c32470.png" title=" Then the field should be editable: Start date of 1st ICRC contract, Employment Details" width="1931"/>
+                <img src="d77d217812c31c2e2ff234326dd87fe3db0d8069c142b254f286ddc63bb147b5.png" title=" Then the field should be editable: Start date of 1st ICRC contract, Employment Details" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: Start date of 1st ICRC contract, Employment Details (completed)" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: EoSI start date, Employment Details" width="1931"/>
+                <img src="0027096b63de669cf56ce521a1db28e8f1ba5ee07ec65545739f8d8728732670.png" title=" Then the field should be editable: EoSI start date, Employment Details" width="1931"/>
+                <img src="e5419413785628409b0f4658c9d8314f766ff7918022e19a7c12ac5454d43581.png" title=" Then the field should be editable: EoSI start date, Employment Details" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: EoSI start date, Employment Details (completed)" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: Effective length of service, Employment Details" width="1931"/>
+                <img src="9ce8585be73ae76ef28777466ab3af6db078a2f8fb515987dd286ed5c4d7c806.png" title=" Then the field should be editable: Effective length of service, Employment Details" width="1931"/>
+                <img src="e5419413785628409b0f4658c9d8314f766ff7918022e19a7c12ac5454d43581.png" title=" Then the field should be editable: Effective length of service, Employment Details" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: Effective length of service, Employment Details (completed)" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: Y-1 nb of working years, Employment Details" width="1931"/>
+                <img src="1855e75548fde53e59ebefeb65f9ca7abd0c993d7b352c95ea8140d320c32470.png" title=" Then the field should be editable: Y-1 nb of working years, Employment Details" width="1931"/>
+                <img src="fdbedf76f9d01f36398d7151fcd186e6c2e01adac28a9794388d941a57a2ce51.png" title=" Then the field should be editable: Y-1 nb of working years, Employment Details" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should be editable: Y-1 nb of working years, Employment Details (completed)" width="1931"/>
+                <img src="f0c4c2a7e44402b524dd241d61d1b049a6ff22e9348b53ff0795af2755bf60bd.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="e5419413785628409b0f4658c9d8314f766ff7918022e19a7c12ac5454d43581.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="0027096b63de669cf56ce521a1db28e8f1ba5ee07ec65545739f8d8728732670.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="9a0568a261a51f45a19a5593f3bc9d77145dbd8d27070c681c0322c0a9558a64.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="b9b1cde6b802b1ddfbb8284b1fc67777758f7dc36568f92c2fcaeb4e0707ad1e.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should not be present: Office Number, Employment Details" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the field should not be present: Office Number, Employment Details (completed)" width="1931"/>
+                <img src="60209388e4de3e6b8348a9200f8c0be07386f6ba73d0b7e83da8613469b275db.png" title=" Then the edit property of RES employee for employment information fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="e8a62e8c4a2e740584460e8f470d4a2006f26637c2505f67d4b4310f9306209e.png" title=" When i go to work eligibility" width="1931"/>
+                <img src="0177d86fcd98a58eb0a29619e4ede960b63d3c81666679ffe9129b5f99550c35.png" title=" When i go to work eligibility (completed)" width="1931"/>
+                <img src="0177d86fcd98a58eb0a29619e4ede960b63d3c81666679ffe9129b5f99550c35.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="0177d86fcd98a58eb0a29619e4ede960b63d3c81666679ffe9129b5f99550c35.png" title=" Then the field should not be present: is Validated, Work Permit" width="1931"/>
+                <img src="bfc929c74ebacdacc29f95fe8023ac66cf5962bd7d995e07ed3beb63979b6ac5.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="899470be062607c797e9f3b59c52bcb20bd8014e73220aee3f8aa89bb2dd6c52.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="c777f31ea6f4ebfd4c5af1d61c6636c45d2ee69247745473266d00afe0e74d40.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="dff164c4bcdd054e4de4980f3cf759fdea7b1f8c3bc9934ddee827e66b3830e1.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="c777f31ea6f4ebfd4c5af1d61c6636c45d2ee69247745473266d00afe0e74d40.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="609a3fa4378a987812a074fd927a03632105f5b3bcf1362efbd9ef862345a175.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="c777f31ea6f4ebfd4c5af1d61c6636c45d2ee69247745473266d00afe0e74d40.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="609a3fa4378a987812a074fd927a03632105f5b3bcf1362efbd9ef862345a175.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="899470be062607c797e9f3b59c52bcb20bd8014e73220aee3f8aa89bb2dd6c52.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="609a3fa4378a987812a074fd927a03632105f5b3bcf1362efbd9ef862345a175.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="56cbf4194a922457dccca2fd3d8681de95fe67f0ff47710a10cbfbd2f80bac37.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="609a3fa4378a987812a074fd927a03632105f5b3bcf1362efbd9ef862345a175.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="609a3fa4378a987812a074fd927a03632105f5b3bcf1362efbd9ef862345a175.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="56cbf4194a922457dccca2fd3d8681de95fe67f0ff47710a10cbfbd2f80bac37.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="dff164c4bcdd054e4de4980f3cf759fdea7b1f8c3bc9934ddee827e66b3830e1.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="56cbf4194a922457dccca2fd3d8681de95fe67f0ff47710a10cbfbd2f80bac37.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="899470be062607c797e9f3b59c52bcb20bd8014e73220aee3f8aa89bb2dd6c52.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Issue Place, Work Permit" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Issue Place, Work Permit (completed)" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Issuing Authority, Work Permit" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Issuing Authority, Work Permit (completed)" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="dff164c4bcdd054e4de4980f3cf759fdea7b1f8c3bc9934ddee827e66b3830e1.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="899470be062607c797e9f3b59c52bcb20bd8014e73220aee3f8aa89bb2dd6c52.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="c777f31ea6f4ebfd4c5af1d61c6636c45d2ee69247745473266d00afe0e74d40.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="c53b9b725d4cf679ec8b1280e8969857f76366a27f029fc82b15a322640b98b3.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="dff164c4bcdd054e4de4980f3cf759fdea7b1f8c3bc9934ddee827e66b3830e1.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="56cbf4194a922457dccca2fd3d8681de95fe67f0ff47710a10cbfbd2f80bac37.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="dff164c4bcdd054e4de4980f3cf759fdea7b1f8c3bc9934ddee827e66b3830e1.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Notes, Work Permit" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Notes, Work Permit (completed)" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Attachments, Work Permit" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the field should not be present: Attachments, Work Permit (completed)" width="1931"/>
+                <img src="56cbf4194a922457dccca2fd3d8681de95fe67f0ff47710a10cbfbd2f80bac37.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="dff164c4bcdd054e4de4980f3cf759fdea7b1f8c3bc9934ddee827e66b3830e1.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="1cef2eb4ad3026486212fcecc9d7da9f939ddfd7241082b8bf719f245db0e90d.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="899470be062607c797e9f3b59c52bcb20bd8014e73220aee3f8aa89bb2dd6c52.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="56cbf4194a922457dccca2fd3d8681de95fe67f0ff47710a10cbfbd2f80bac37.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="b325a9d10e9f1dc452f3682f99127906689684d0d6bd00b9f946cc8e2492bf95.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="899470be062607c797e9f3b59c52bcb20bd8014e73220aee3f8aa89bb2dd6c52.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set" width="1931"/>
+                <img src="df9706591a832eddb931ea11b7ca71255b82c59badf9323d899c234501c20052.png" title=" Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="aa91f82b4da894e7077239bcebd741c6efd5a73214fb0b49c3fe2d7209497228.png" title=" When i go to job relationship" width="1931"/>
+                <img src="d1d28243554fadbad734f0717c36b84707a305c83f175a9a481cdb5583a04c22.png" title=" When i go to job relationship" width="1931"/>
+                <img src="1212d002ae174b4c90805b34ec07b57f5e8e7d8e07502bb8b4bd15d6625da096.png" title=" When i go to job relationship (completed)" width="1931"/>
+                <img src="1212d002ae174b4c90805b34ec07b57f5e8e7d8e07502bb8b4bd15d6625da096.png" title=" Then the edit property of RES employee for job relationships fields for HRIS should be correctly set" width="1931"/>
+                <img src="1212d002ae174b4c90805b34ec07b57f5e8e7d8e07502bb8b4bd15d6625da096.png" title=" Then job relationship field should be view only: Job Relationships" width="1931"/>
+                <img src="1212d002ae174b4c90805b34ec07b57f5e8e7d8e07502bb8b4bd15d6625da096.png" title=" Then the edit property of RES employee for job relationships fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="67b389b7d36b75c53285db6accc6b1b0893f87cae5f062ae485c811f152459cc.png" title=" When i go to job info" width="1931"/>
+                <img src="3a564100d065dc60eea1bd244c86817ab7bb370b24697ce4a037db240b340afa.png" title=" When i go to job info" width="1931"/>
+                <img src="93b0baa01018ff986cf87e1a2f41e08807b7d9a43cd61254c1a000514898e9e4.png" title=" When i go to job info (completed)" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="670570cfc6c8f491b5ffaddc4cbe9e2d7040acb1e2a403f550bb5c5ea8472e8a.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="cb8275d208a4c415aa0e0b342407db267617da1bc54c179df4d7b1469f4d8dca.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="186d891a0b0a170bcac2e999931254e020b38fce0d6eb8519f0bd13c05d457bd.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="cb8275d208a4c415aa0e0b342407db267617da1bc54c179df4d7b1469f4d8dca.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="bdd63bdbd7b44ca7f98b12ef5996a807cdfc3544d7c206bce2d97085ee0402b1.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="3c9e9b6957dbb080340623e39cec932b52be6acd744e339837c93a9f8e1038bf.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="670570cfc6c8f491b5ffaddc4cbe9e2d7040acb1e2a403f550bb5c5ea8472e8a.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: National society code, Job Information" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: National society code, Job Information (completed)" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Position Grade, Job Information" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Position Grade, Job Information (completed)" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Position-Person Fit, Job Information" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Position-Person Fit, Job Information (completed)" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Confirmed, Job Information" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Confirmed, Job Information (completed)" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Template Week code, Job Information" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: Template Week code, Job Information (completed)" width="1931"/>
+                <img src="d86a2bf45814fe4bd97fa552c84e4024f749e2d7e193a21502d84dfe4804288c.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="670570cfc6c8f491b5ffaddc4cbe9e2d7040acb1e2a403f550bb5c5ea8472e8a.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="95702bf74ee54eeb4ed5f096523ad29c4438a012980d6ef171dcef4064a2b4a2.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: In between missions, Job Information" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the field should not be present: In between missions, Job Information (completed)" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="86e4f0aa14529b11a47bf8828e42bdd84897d805d6c1b5ab5526420a1b58b0a9.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="670570cfc6c8f491b5ffaddc4cbe9e2d7040acb1e2a403f550bb5c5ea8472e8a.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0e0c26ced879f53106e0433e2a10f698fa2a2c45e7feabd657d8b64ec8769f53.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="836391498219786368c3cc6d844066e5863e9f1a184830aa13bd745baad8bdf5.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="109a3fc93175fa51e8324f17654af301ff64d65b62c9c76049dfb266c539d437.png" title=" Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024 (completed)" width="1931"/>
+                <img src="3ed7604207c3c1678336c7cea3dff858c00ceb06a2f976a7f18f388a016c9a38.png" title=" When i go to non recurring pay elements" width="1931"/>
+                <img src="7057d67fee453683ee8db7e54d23f0d5ed49e8a2ea7f23ebca9bc23e6faf7122.png" title=" When i go to non recurring pay elements" width="1931"/>
+                <img src="cf7014ed663eb7105273a4431268ca9ec52e4fe05ff1713b1768e7da96f3132e.png" title=" When i go to non recurring pay elements (completed)" width="1931"/>
+                <img src="0b39ac36575c84d7fe0d81e8175a572252a4e1888f0019ed02337b240eee69ba.png" title=" Then the edit property of RES employee for non recurring pay elements fields for HRIS should be correctly set" width="1931"/>
+                <img src="0b39ac36575c84d7fe0d81e8175a572252a4e1888f0019ed02337b240eee69ba.png" title=" Then the field should be editable and add button should be present: Value, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="0b39ac36575c84d7fe0d81e8175a572252a4e1888f0019ed02337b240eee69ba.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" When i click on portlet edit button: Non-recurring pay elements (completed)" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" Then i check that the field should be editable and add button should be present: Value, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="6873ef3b24d537387da4683a0cf5fccc1a8e547046fc80645348cb5961282cbc.png" title=" Then i check that the field should be editable and add button should be present: Value, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then i check that the field should be editable and add button should be present: Value, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Value, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Issue Date, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="0b39ac36575c84d7fe0d81e8175a572252a4e1888f0019ed02337b240eee69ba.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" When i click on portlet edit button: Non-recurring pay elements (completed)" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" Then i check that the field should be editable and add button should be present: Issue Date, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="6873ef3b24d537387da4683a0cf5fccc1a8e547046fc80645348cb5961282cbc.png" title=" Then i check that the field should be editable and add button should be present: Issue Date, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then i check that the field should be editable and add button should be present: Issue Date, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Issue Date, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Type, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="0b39ac36575c84d7fe0d81e8175a572252a4e1888f0019ed02337b240eee69ba.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" When i click on portlet edit button: Non-recurring pay elements (completed)" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" Then i check that the field should be editable and add button should be present: Type, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="6873ef3b24d537387da4683a0cf5fccc1a8e547046fc80645348cb5961282cbc.png" title=" Then i check that the field should be editable and add button should be present: Type, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then i check that the field should be editable and add button should be present: Type, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Type, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Currency Code, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="ba1217364a51b73c8bce442cebe186779d5d6c1c90cab4932c246e39143223fd.png" title=" When i click on portlet edit button: Non-recurring pay elements" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" When i click on portlet edit button: Non-recurring pay elements (completed)" width="1931"/>
+                <img src="900cf64cf60a203235b351f3478cad9018eeb1be1fdfdcb026211a86e38b4b9b.png" title=" Then i check that the field should be editable and add button should be present: Currency Code, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="6873ef3b24d537387da4683a0cf5fccc1a8e547046fc80645348cb5961282cbc.png" title=" Then i check that the field should be editable and add button should be present: Currency Code, Non-recurring pay elements, Non-recurring pay elements" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then i check that the field should be editable and add button should be present: Currency Code, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the field should be editable and add button should be present: Currency Code, Non-recurring pay elements, Non-recurring pay elements (completed)" width="1931"/>
+                <img src="360ede3caa0de8ed35ea229a20488c86c9b6f2483a31cc83959908d3adf96c7b.png" title=" Then the edit property of RES employee for non recurring pay elements fields for HRIS should be correctly set (completed)" width="1931"/>
+                <img src="a51ee91c7e7ab6554def451bbd64e15a938970343df5b04b1636e95faf971a5b.png" title=" When i go to compensation info" width="1931"/>
+                <img src="5909a8ddf54f086beed761dacdbb9f6f42a7f91eff883800d19327464bea9549.png" title=" When i go to compensation info" width="1931"/>
+                <img src="3610b25b5388510da9107b6c7c2eaa7f29feb544759239a847ad9d60891273c8.png" title=" When i go to compensation info (completed)" width="1931"/>
+                <img src="5851575d971a05c9a0993feb269ab27e30e1fc6336463f53f8a000a4b5310eb2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="c1b143c24a1aa0e35637847646c818b3d0cd229704810a3cff62bf25509fd3e2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Annual Total Package (02), Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Annual Total Package (02), Compensation Information (completed)" width="1931"/>
+                <img src="5851575d971a05c9a0993feb269ab27e30e1fc6336463f53f8a000a4b5310eb2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="47e8c9ae7e6b421d33516e651d23be423bbdd50ff2805dc0c0555553e5912902.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="3118db3367d0ff13df3dc6ccddf875c59816203c24a5a64950fb1a036ac6257e.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="c1b143c24a1aa0e35637847646c818b3d0cd229704810a3cff62bf25509fd3e2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="5851575d971a05c9a0993feb269ab27e30e1fc6336463f53f8a000a4b5310eb2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="c1b143c24a1aa0e35637847646c818b3d0cd229704810a3cff62bf25509fd3e2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Personal Grade, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Personal Grade, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: COL index, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: COL index, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Country, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Country, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Action Purpose, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Action Purpose, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Correction Date, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Correction Date, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Correction Purpose, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Correction Purpose, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Step ID, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Step ID, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Condition of reimbursement (NS/ICRC), Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Condition of reimbursement (NS/ICRC), Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Amount in percentage, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Amount in percentage, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Grandfathering, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Grandfathering, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: End of Grandfathering, Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: End of Grandfathering, Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Standard compensation structure (SCS), Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Standard compensation structure (SCS), Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Start Date (SCS), Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: Start Date (SCS), Compensation Information (completed)" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: End Date (SCS), Compensation Information" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the field should not be present: End Date (SCS), Compensation Information (completed)" width="1931"/>
+                <img src="5851575d971a05c9a0993feb269ab27e30e1fc6336463f53f8a000a4b5310eb2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="adf49bca7352116d2526a5b1018d32c7b638977ba8c3ef4f9d3dfc869c2ac244.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="3118db3367d0ff13df3dc6ccddf875c59816203c24a5a64950fb1a036ac6257e.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="c1b143c24a1aa0e35637847646c818b3d0cd229704810a3cff62bf25509fd3e2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="0bdeb49a328daf25885444294b7a6d9cdeb8c8e418ceeb2c45087e1394d792e2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="47e8c9ae7e6b421d33516e651d23be423bbdd50ff2805dc0c0555553e5912902.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="5851575d971a05c9a0993feb269ab27e30e1fc6336463f53f8a000a4b5310eb2.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="47e8c9ae7e6b421d33516e651d23be423bbdd50ff2805dc0c0555553e5912902.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024" width="1931"/>
+                <img src="7a6dd7bf54c901bf983cbd50a3185b32e6a43822c3a64cc48400b5bfef64f2f1.png" title=" Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024 (completed)" width="1931"/>
+                <img src="a62cfb6a0f731536664ed5a23dd0d620977a0becbfb49f1b750f33da6dca3d38.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="468c12daf741fe27905114664383b4f752951521c9277252478d7c2c06b6abe6.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="943bcf9c2df837b95d6ae6c101aeb755efe51ebb6546ff02fe73dba3a06fb512.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="b5ab4136a8263226b0e7c43c1d01674d19d4d76f085bec201677a304b17ebe5e.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="24cf78c45ac8e76cd4a1384764bc5eb2013dc3335a57cb8d46c293d53866d537.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="f76e0dda883d552cff3f2918d9d11f57803fc0fc8d17c73af269a5f602eb70ce.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="cad136e6cdfe86ea168583e7e245d924139b8b4a3ff786d63f33693cfdd15e4e.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days" width="1931"/>
+                <img src="53491872c9e58a20e34ecd557322dc57ea5d6810fcb058bb03e2ae92b911664a.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days" width="1931"/>
+                <img src="f76e0dda883d552cff3f2918d9d11f57803fc0fc8d17c73af269a5f602eb70ce.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="53491872c9e58a20e34ecd557322dc57ea5d6810fcb058bb03e2ae92b911664a.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="fd792ba41577f442a899b3fb140e850111b68d2fe99b9d2c43829f2faca6cac9.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="fd792ba41577f442a899b3fb140e850111b68d2fe99b9d2c43829f2faca6cac9.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="24cf78c45ac8e76cd4a1384764bc5eb2013dc3335a57cb8d46c293d53866d537.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="f76e0dda883d552cff3f2918d9d11f57803fc0fc8d17c73af269a5f602eb70ce.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="f76e0dda883d552cff3f2918d9d11f57803fc0fc8d17c73af269a5f602eb70ce.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days" width="1931"/>
+                <img src="24cf78c45ac8e76cd4a1384764bc5eb2013dc3335a57cb8d46c293d53866d537.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days" width="1931"/>
+                <img src="f76e0dda883d552cff3f2918d9d11f57803fc0fc8d17c73af269a5f602eb70ce.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="24cf78c45ac8e76cd4a1384764bc5eb2013dc3335a57cb8d46c293d53866d537.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="fd792ba41577f442a899b3fb140e850111b68d2fe99b9d2c43829f2faca6cac9.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days" width="1931"/>
+                <img src="24cf78c45ac8e76cd4a1384764bc5eb2013dc3335a57cb8d46c293d53866d537.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="53491872c9e58a20e34ecd557322dc57ea5d6810fcb058bb03e2ae92b911664a.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days" width="1931"/>
+                <img src="a09adbe8161f6577ef472f7580ce73c52476262f474b8e7f059257968bb3c231.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="f76e0dda883d552cff3f2918d9d11f57803fc0fc8d17c73af269a5f602eb70ce.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="fd792ba41577f442a899b3fb140e850111b68d2fe99b9d2c43829f2faca6cac9.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="022140a127c7daf3f3beeb2fe12a8438236a9ff8dd3b23b4c07b51bcec4c02c3.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="baf734bd41919715f2bab8aeee73c32cd16b66da2375c3d0342dfcdbc12116b6.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="24cf78c45ac8e76cd4a1384764bc5eb2013dc3335a57cb8d46c293d53866d537.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="fd792ba41577f442a899b3fb140e850111b68d2fe99b9d2c43829f2faca6cac9.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set" width="1931"/>
+                <img src="42866b49a16918df64a276a0031a7a28414a5dfdd3a6d34ac61e69b8c161603b.png" title=" Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

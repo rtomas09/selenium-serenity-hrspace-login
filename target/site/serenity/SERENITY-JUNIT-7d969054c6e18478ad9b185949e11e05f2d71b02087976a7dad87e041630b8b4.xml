@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="org.icrc.hrspace.TIMEOFF.EmployeeTimeOffGeneva" skipped="0" tests="1" time="33.96" timestamp="2024-06-18 04:09:44"><testcase classname="org.icrc.hrspace.TIMEOFF.EmployeeTimeOffGeneva" name="Submit employee holiday leave"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver&#13;
+pages.LoginPages.getUrl(LoginPages.java:15)&#13;
+steps.LoginSteps.given_that_Im_logged_in_to_HR_space(LoginSteps.java:30)&#13;
+steps.TIMEOFF.TimeOffManagementSteps.when_the_employee_submits_absence_request(TimeOffManagementSteps.java:40)&#13;
+org.icrc.hrspace.TIMEOFF.EmployeeTimeOffGeneva.submitEmployeeHolidayLeave(EmployeeTimeOffGeneva.java:74)&#13;
+</system-err></testcase></testsuite>

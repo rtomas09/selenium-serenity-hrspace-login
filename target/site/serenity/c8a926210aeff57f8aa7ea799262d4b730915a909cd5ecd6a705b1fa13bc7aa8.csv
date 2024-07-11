@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Employee data","CH ED02 employee on themselves","ERROR","2024-05-09T23:00:39.2987587+08:00[Asia/Manila]","0.0","222.82"
+"Employee data","CH ED03 HR remuneraton","ERROR","2024-05-10T00:50:30.9625507+08:00[Asia/Manila]","0.0","165.2"
+"Employee data","RES ED04 HRM","ERROR","2024-05-10T04:56:18.2309596+08:00[Asia/Manila]","0.0","164.89"
+"Employee data","RES ED11 HR CA","ERROR","2024-05-10T06:08:00.4639294+08:00[Asia/Manila]","0.0","6.25"
+"Employee data","RES ED11 HR pay roll","ERROR","2024-05-10T06:08:07.7277721+08:00[Asia/Manila]","0.0","188.64"
+"Employee data","RES ED11 HR remuneraton","ERROR","2024-05-10T06:11:18.8461518+08:00[Asia/Manila]","0.0","182.25"
+"Employee data","Check hra res employee data","ERROR","2024-05-10T06:58:05.6341036+08:00[Asia/Manila]","0.0","65.54"

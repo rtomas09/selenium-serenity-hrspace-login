@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="7" failures="0" name="org.icrc.hrspace.EC.EmployeeData" skipped="0" tests="18" time="29622.89" timestamp="2024-05-09 10:44:57"><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED01 employee on other"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED02 employee on themselves"><error message="Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'&#10;Driver info: net.thucydides.core.webdriver.WebDriverFacade" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade</error><system-err>Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade&#13;
+utils.ExplicitWait.explicitlyWaitForPresenceOfElement(ExplicitWait.java:119)&#13;
+pages.GenericPage.clickElement(GenericPage.java:194)&#13;
+pages.MyEmployeeFilePage.goToPortlet(MyEmployeeFilePage.java:57)&#13;
+steps.EC.MyEmployeeFileSteps.when_I_go_to_Biographical_Info(MyEmployeeFileSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.CH_ED02_Employee_on_themselves(EmployeeData.java:492)&#13;
+</system-err></testcase><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED03 HR CA"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED03 HR pay roll"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED03 HR remuneraton"><error message="Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'&#10;Driver info: net.thucydides.core.webdriver.WebDriverFacade" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade</error><system-err>Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade&#13;
+utils.ExplicitWait.explicitlyWaitForPresenceOfElement(ExplicitWait.java:119)&#13;
+pages.GenericPage.clickElement(GenericPage.java:194)&#13;
+pages.MyEmployeeFilePage.goToPortlet(MyEmployeeFilePage.java:57)&#13;
+steps.EC.MyEmployeeFileSteps.when_I_go_to_Biographical_Info(MyEmployeeFileSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.CH_ED03_HR_Remuneraton(EmployeeData.java:208)&#13;
+</system-err></testcase><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED04 HRIS"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED05 HRM"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED08 LM"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="CH ED11 talent manager"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED02 employee on themselves"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED03 line manager"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED04 HRM"><error message="Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'&#10;Driver info: net.thucydides.core.webdriver.WebDriverFacade" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade</error><system-err>Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade&#13;
+utils.ExplicitWait.explicitlyWaitForPresenceOfElement(ExplicitWait.java:119)&#13;
+pages.GenericPage.clickElement(GenericPage.java:194)&#13;
+pages.MyEmployeeFilePage.goToPortlet(MyEmployeeFilePage.java:57)&#13;
+steps.EC.MyEmployeeFileSteps.when_I_go_to_Biographical_Info(MyEmployeeFileSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.RES_ED04_HRM(EmployeeData.java:1030)&#13;
+</system-err></testcase><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED05 HRIS"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED11 HR CA"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver&#13;
+pages.LoginPages.getUrl(LoginPages.java:15)&#13;
+steps.LoginSteps.given_that_Im_logged_in_to_HR_space(LoginSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.RES_ED11_HR_CA(EmployeeData.java:728)&#13;
+</system-err></testcase><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED11 HR pay roll"><error message="Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'&#10;Driver info: net.thucydides.core.webdriver.WebDriverFacade" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade</error><system-err>Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade&#13;
+utils.ExplicitWait.explicitlyWaitForPresenceOfElement(ExplicitWait.java:119)&#13;
+pages.GenericPage.clickElement(GenericPage.java:194)&#13;
+pages.MyEmployeeFilePage.goToPortlet(MyEmployeeFilePage.java:57)&#13;
+steps.EC.MyEmployeeFileSteps.when_I_go_to_Biographical_Info(MyEmployeeFileSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.RES_ED11_HR_PayRoll(EmployeeData.java:875)&#13;
+</system-err></testcase><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED11 HR remuneraton"><error message="Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'&#10;Driver info: net.thucydides.core.webdriver.WebDriverFacade" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade</error><system-err>Expected condition failed: waiting for presence of By.xpath: //div[contains(@role, 'listbox')]/*[.//span[contains(., 'Personal Information')]]//button[@aria-label = 'Open Menu'] (tried for 15 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.254.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: net.thucydides.core.webdriver.WebDriverFacade&#13;
+utils.ExplicitWait.explicitlyWaitForPresenceOfElement(ExplicitWait.java:119)&#13;
+pages.GenericPage.clickElement(GenericPage.java:194)&#13;
+pages.MyEmployeeFilePage.goToPortlet(MyEmployeeFilePage.java:57)&#13;
+steps.EC.MyEmployeeFileSteps.when_I_go_to_Biographical_Info(MyEmployeeFileSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.RES_ED11_HR_Remuneraton(EmployeeData.java:806)&#13;
+</system-err></testcase><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="RES ED15 HRAX"/><testcase classname="org.icrc.hrspace.EC.EmployeeData" name="Check hra res employee data"><error message="Index 1 out of bounds for length 0" type="java.lang.IndexOutOfBoundsException">Index 1 out of bounds for length 0</error><system-err>Index 1 out of bounds for length 0&#13;
+pages.GenericPage.switchToTab(GenericPage.java:522)&#13;
+steps.HeaderSteps.when_I_search_for_an_employee_using_the_header_search_bar(HeaderSteps.java:30)&#13;
+org.icrc.hrspace.EC.EmployeeData.checkHraResEmployeeData(EmployeeData.java:654)&#13;
+</system-err></testcase></testsuite>

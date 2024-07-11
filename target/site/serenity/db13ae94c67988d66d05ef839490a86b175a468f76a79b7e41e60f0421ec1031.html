@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Stories</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Employee data","type":"story","href":"db13ae94c67988d66d05ef839490a86b175a468f76a79b7e41e60f0421ec1031.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e18 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="00a94e078b86ad8d811fe6179933c108e8d44a381baebafecac9dbfd66f7554c.html">EC</a>
+
+
+                > <span class="truncate-40">Employee Data</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 09-05-2024 22:44</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Story:  Employee Data</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#c09b26d3ee7ace53c3e10c3fb5928f5e9bf1a6f13bca7f8c1df0d5bb27944f2a" title="View scenario details" >CH ED01 employee on other</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="0a53b3582d3280f78bf0e38d15634a818a21362c55b58f0bd3f5a1767d243bf6.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="0a53b3582d3280f78bf0e38d15634a818a21362c55b58f0bd3f5a1767d243bf6.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#65a1260e1afcc45962421c51e61e33b9dd5b0368b3e5c3bce2c5c325da54b4c9" title="View scenario details" >CH ED02 employee on themselves</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="21dd1bf96acf9bb5635ac6a1c35e8bfb3b2c3bb344a0e6542fa702263ce86556.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="21dd1bf96acf9bb5635ac6a1c35e8bfb3b2c3bb344a0e6542fa702263ce86556.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#c72fceabd2f4b5d8f0bdcc5676070d20b5bfc377fac563a6d148289583c13de3" title="View scenario details" >CH ED03 HR CA</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="7187981f97686beb3f473fe93f97c90ebc0d9c877a033c94173e7f68d046d973.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="7187981f97686beb3f473fe93f97c90ebc0d9c877a033c94173e7f68d046d973.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#4d41396384df0af0a210060f0d0b3029f27c749b9872d719f50c5fdf36554aa5" title="View scenario details" >CH ED03 HR payroll</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4e459d020e438ff74b2e40bd9d516ade9658c1fc4754d3ee4fbee833c53fe7b8.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4e459d020e438ff74b2e40bd9d516ade9658c1fc4754d3ee4fbee833c53fe7b8.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#33fa314daa6c616b66c68909ca6c6d0d9f7b2b0322da5c957df86354c3133c69" title="View scenario details" >CH ED03 HR remuneraton</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="3f1bad0528d0aee643a8ff9394a1eb66e7e9fbf106b57d3fe9aa7b5346795baa.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="3f1bad0528d0aee643a8ff9394a1eb66e7e9fbf106b57d3fe9aa7b5346795baa.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#dd10270d6a382ad82726e29e2e6a55a28cefc642b521cbb9deb6fd25cf34cd7b" title="View scenario details" >CH ED04 HRIS</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a9c3aab5f450c5e2638be1f77d30c50f56a96828a23f5a56a6eea9b9a8fb2c3c" title="View scenario details" >CH ED05 HRM</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="09cd04f7e3e87f0a7a7a34d624a829e64a8ff8e56440137f13bb6c3f5487b256.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="09cd04f7e3e87f0a7a7a34d624a829e64a8ff8e56440137f13bb6c3f5487b256.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6033a6347769e125f6862b2d8e1bf0890e6119e5674c6e60a9631578c88215b5" title="View scenario details" >CH ED08 LM</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="a6f0c8413b6dac29b28782fdc2f8eeb9d9fef87837d6037a33a4762dcae3349e.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="a6f0c8413b6dac29b28782fdc2f8eeb9d9fef87837d6037a33a4762dcae3349e.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#35c1e1914d2ea76e2605cc48262715daaf51b9a7c8902dd68a585a9e7018cbef" title="View scenario details" >CH ED11 talentmanager</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="71507d3c39d8416ba01aa8b6c67a45146187445798153ddd77f6e098944a9bae.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="71507d3c39d8416ba01aa8b6c67a45146187445798153ddd77f6e098944a9bae.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#547760e52a55e025c7337e57c944a74e03b9ff58a0e335e0e3e6bf018ce490b9" title="View scenario details" >RES ED02 employee on themselves</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="55c513314304629800ec9ec1cc2eae1b10db339a56177afd6a4a24dffee9f188.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="55c513314304629800ec9ec1cc2eae1b10db339a56177afd6a4a24dffee9f188.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#f9f80678f476b356b4dc8ffa164de285f8a20760eb15d598eefd211f74332451" title="View scenario details" >RES ED03 linemanager</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4ed07567202b3329263555156aeecf55f76b78a30f3c6cca36a2e81578aa8177.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4ed07567202b3329263555156aeecf55f76b78a30f3c6cca36a2e81578aa8177.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5b6908b01a2de9ff7ee1f8a3e375b963ac609bba3543e87180b9e1587e5f4e31" title="View scenario details" >RES ED04 HRM</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="95a4705ef42cdd7681bdcd6c490001282ae9de2cad825f8c747da220f1410171.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="95a4705ef42cdd7681bdcd6c490001282ae9de2cad825f8c747da220f1410171.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a3a6c6b9e02b4dc68f869c57780ed89d68e2ca78c4602e6a71869a262fecbf28" title="View scenario details" >RES ED05 HRIS</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="46314e8496b59defcc11c3b2485c0e1c6859641e052930c72c5c9fd0f94c9c3c.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="46314e8496b59defcc11c3b2485c0e1c6859641e052930c72c5c9fd0f94c9c3c.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#452a5aa2eacbd2f5e307d1436da76ca94ead1d3b57d7a9bbe16a5b3e08a68506" title="View scenario details" >RES ED11 HR CA</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="b1caf90fe3c160116929cf095279bba2886ef5ccd477aee286b35986b7491b97.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="b1caf90fe3c160116929cf095279bba2886ef5ccd477aee286b35986b7491b97.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#12a4c82f42f80870454abe267c4fb8645161eeb8e490986fc3efb05676688644" title="View scenario details" >RES ED11 HR payroll</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="8dd2741b5c0a4bfe081baa7027d707b281c15aee5a513840d987ae81864c201a.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="8dd2741b5c0a4bfe081baa7027d707b281c15aee5a513840d987ae81864c201a.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#e805246d85982c09980aa430f6454109f22e201f15b6030c5f449f608a4e0180" title="View scenario details" >RES ED11 HR remuneraton</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="439de073771e623a8eff2f223575d509c5ff57d2f73b74e740e7923939fd090a.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="439de073771e623a8eff2f223575d509c5ff57d2f73b74e740e7923939fd090a.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#613b5e17b4d3bea3001c317a58a85b0a8e69adb3c72cde7a572a6c26962e1547" title="View scenario details" >RES ED15 HRAX</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="eac2a2814f140fdacfe484132805fdad03ccc0d965e23ab32e3c92ad4545e2cf.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="eac2a2814f140fdacfe484132805fdad03ccc0d965e23ab32e3c92ad4545e2cf.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#8862da9fc0419490feffd23a6525629279135a697360a9e855b0bcf0194f3f17" title="View scenario details" >Check hra res employee data</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4875acb13cff0112e21d2dc17d5c9bc2a46434dd039316392c7aa1fa610befa3.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4875acb13cff0112e21d2dc17d5c9bc2a46434dd039316392c7aa1fa610befa3.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="c09b26d3ee7ace53c3e10c3fb5928f5e9bf1a6f13bca7f8c1df0d5bb27944f2a">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="0a53b3582d3280f78bf0e38d15634a818a21362c55b58f0bd3f5a1767d243bf6.html" title="View test results">CH ED01 employee on other</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Karen Lieve Ria HOSTENS'</p>
+                                                            <p>When i search for an employee using the header search bar: Philippe SALLET</p>
+                                                            <p>When EE go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for other EE should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for other EE should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for other EE should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for other EE should be correctly set: 09/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="65a1260e1afcc45962421c51e61e33b9dd5b0368b3e5c3bce2c5c325da54b4c9">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="21dd1bf96acf9bb5635ac6a1c35e8bfb3b2c3bb344a0e6542fa702263ce86556.html" title="View test results">CH ED02 employee on themselves</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Karen Lieve Ria HOSTENS'</p>
+                                                            <p>When i search for an employee using the header search bar: Karen Lieve Ria HOSTENS</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for EE should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for EE should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for EE should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for EE should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for EE should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for EE should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for EE should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for EE should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for EE should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for EE should be correctly set: 09/05/2024</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for EE should be correctly set: 09/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="c72fceabd2f4b5d8f0bdcc5676070d20b5bfc377fac563a6d148289583c13de3">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="7187981f97686beb3f473fe93f97c90ebc0d9c877a033c94173e7f68d046d973.html" title="View test results">CH ED03 HR CA</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Karel Caguing'</p>
+                                                            <p>When i search for an employee using the header search bar: Frank SCHAAPMAN</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for HR CA should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for HR CA should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for HR CA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for HR CA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for HR CA should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for HR CA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for HR CA should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for HR CA should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of work eligibility for HR CA should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for HR CA should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for HR CA should be correctly set: 09/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of non recurring pay elements for HR CA should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for HR CA should be correctly set: 09/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of my office home working days for HR CA should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="4d41396384df0af0a210060f0d0b3029f27c749b9872d719f50c5fdf36554aa5">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="4e459d020e438ff74b2e40bd9d516ade9658c1fc4754d3ee4fbee833c53fe7b8.html" title="View test results">CH ED03 HR pay roll</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Frances Velasco'</p>
+                                                            <p>When i search for an employee using the header search bar: Frank SCHAAPMAN</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for HR payroll should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for HR payroll should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for HR payroll should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for HR payroll should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for HR payroll should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for HR payroll should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for HR payroll should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for HR payroll should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of work eligibility for HR payroll should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for HR payroll should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for HR payroll should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of non recurring pay elements for HR payroll should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for HR payroll should be correctly set: 10/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="33fa314daa6c616b66c68909ca6c6d0d9f7b2b0322da5c957df86354c3133c69">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="3f1bad0528d0aee643a8ff9394a1eb66e7e9fbf106b57d3fe9aa7b5346795baa.html" title="View test results">CH ED03 HR remuneraton</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Johanna Angela Del Rosario'</p>
+                                                            <p>When i search for an employee using the header search bar: Frank SCHAAPMAN</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for HR rem should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for HR rem should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for HR rem should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for HR rem should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for HR rem should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for HR rem should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for HR rem should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for HR rem should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for HR rem should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for HR rem should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of non recurring pay elements for HR rem should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for HR rem should be correctly set: 10/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="dd10270d6a382ad82726e29e2e6a55a28cefc642b521cbb9deb6fd25cf34cd7b">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1.html" title="View test results">CH ED04 HRIS</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'admin Jefra Kathleen Ann SORIANO'</p>
+                                                            <p>When i search for an employee using the header search bar: Philippe SALLET</p>
+                                                            <p>Then my employee file is displayed</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for HRIS should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for HRIS should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for HRIS should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for HRIS should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for HRIS should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for HRIS should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of work eligibility for HRIS should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for HRIS should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for HRIS should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of non recurring pay elements for HRIS should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for HRIS should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of my office home working days for HRIS should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a9c3aab5f450c5e2638be1f77d30c50f56a96828a23f5a56a6eea9b9a8fb2c3c">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="09cd04f7e3e87f0a7a7a34d624a829e64a8ff8e56440137f13bb6c3f5487b256.html" title="View test results">CH ED05 HRM</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Caroline Murage Macharia'</p>
+                                                            <p>When i search for an employee using the header search bar: Christoph VOGT</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for HRM should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for HRM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for HRM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for HRM should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for HRM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for HRM should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for HRM should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for HRM should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for HRM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for HRM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of my office home working days for HRM should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6033a6347769e125f6862b2d8e1bf0890e6119e5674c6e60a9631578c88215b5">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="a6f0c8413b6dac29b28782fdc2f8eeb9d9fef87837d6037a33a4762dcae3349e.html" title="View test results">CH ED08 LM</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Christoph VOGT'</p>
+                                                            <p>When i search for an employee using the header search bar: Geert DE VRIES</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for LM should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for LM should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for LM should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for LM should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for LM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of my office home working days for LM should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="35c1e1914d2ea76e2605cc48262715daaf51b9a7c8902dd68a585a9e7018cbef">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="71507d3c39d8416ba01aa8b6c67a45146187445798153ddd77f6e098944a9bae.html" title="View test results">CH ED11 talent manager</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'MylÃ¨ne TURENNE'</p>
+                                                            <p>When i search for an employee using the header search bar: Geert DE VRIES</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for TM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for TM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for TM should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for TM should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for TM should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for TM should be correctly set: 10/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="547760e52a55e025c7337e57c944a74e03b9ff58a0e335e0e3e6bf018ce490b9">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="55c513314304629800ec9ec1cc2eae1b10db339a56177afd6a4a24dffee9f188.html" title="View test results">RES ED02 employee on themselves</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Donstefano Muninzwa'</p>
+                                                            <p>When i search for an employee using the header search bar: Donstefano Muninzwa</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of RES employee for biographical info fields for EE should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of RES employee for personal info fields for EE should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of RES employee for national ID fields for EE should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for email info fields for EE should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for phone info fields for EE should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of RES employee for address info fields for EE should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for emergency contact info fields for EE should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of RES employee for employment details fields for EE should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of RES employee for job information fields for EE should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of RES employee for compensation information fields for EE should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of RES employee for my office home working days fields for EE should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="f9f80678f476b356b4dc8ffa164de285f8a20760eb15d598eefd211f74332451">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="4ed07567202b3329263555156aeecf55f76b78a30f3c6cca36a2e81578aa8177.html" title="View test results">RES ED03 line manager</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Christoph VOGT'</p>
+                                                            <p>When i search for an employee using the header search bar: Geert DE VRIES</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of RES employee for biographical info fields for LM should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of RES employee for personal info fields for LM should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of RES employee for employment details fields for LM should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of RES employee for job relationship fields for LM should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of RES employee for job information fields for LM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of RES employee for compensation information fields for LM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of RES employee for my office home working days fields for LM should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5b6908b01a2de9ff7ee1f8a3e375b963ac609bba3543e87180b9e1587e5f4e31">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="95a4705ef42cdd7681bdcd6c490001282ae9de2cad825f8c747da220f1410171.html" title="View test results">RES ED04 HRM</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Caroline Murage Macharia'</p>
+                                                            <p>When i search for an employee using the header search bar: Adilson Antonio Ferreira</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of RES employee for biographical info fields for HRM should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of RES employee for personal info fields for HRM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for email info fields for HRM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for phone info fields for HRM should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of RES employee for address info fields for HRM should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for emergency contact info fields for HRM should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of RES employee for employment details fields for HRM should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of RES employee for job relationship fields for HRM should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of RES employee for job information fields for HRM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of RES employee for compensation information fields for HRM should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of RES employee for my office home working days fields for HRM should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a3a6c6b9e02b4dc68f869c57780ed89d68e2ca78c4602e6a71869a262fecbf28">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="46314e8496b59defcc11c3b2485c0e1c6859641e052930c72c5c9fd0f94c9c3c.html" title="View test results">RES ED05 HRIS</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'admin Jefra Kathleen Ann SORIANO'</p>
+                                                            <p>When i search for an employee using the header search bar: Adelyn Hernandez</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of RES employee for biographical info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of RES employee for personal info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for email info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for phone info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of RES employee for address info fields for HRIS should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for emergency contact fields for HRIS should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of RES employee for employment information fields for HRIS should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of RES employee for work eligibility fields for HRIS should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of RES employee for job relationships fields for HRIS should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of RES employee for job information fields for HRIS should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of RES employee for non recurring pay elements fields for HRIS should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of RES employee for compensation information fields for HRIS should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of RES employee for my office home working days fields for HRIS should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="452a5aa2eacbd2f5e307d1436da76ca94ead1d3b57d7a9bbe16a5b3e08a68506">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="b1caf90fe3c160116929cf095279bba2886ef5ccd477aee286b35986b7491b97.html" title="View test results">RES ED11 HR CA</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Karel Caguing'</p>
+                                                            <p>When i search for an employee using the header search bar: Mahmoud Agig Abdelrahim</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for res HR CA should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for res HR CA should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for res HR CA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for res HR CA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for res HR CA should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for res HR CA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for res HR CA should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for res HR CA should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of work eligibility for res HR CA should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for res HR CA should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for res HR CA should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of non recurring pay elements for res HR CA should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for res HR CA should be correctly set: 10/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="12a4c82f42f80870454abe267c4fb8645161eeb8e490986fc3efb05676688644">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="8dd2741b5c0a4bfe081baa7027d707b281c15aee5a513840d987ae81864c201a.html" title="View test results">RES ED11 HR pay roll</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Frances Velasco'</p>
+                                                            <p>When i search for an employee using the header search bar: Mahmoud Agig Abdelrahim</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for res HR payroll should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for res HR payroll should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for res HR payroll should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for res HR payroll should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for res HR payroll should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for res HR payroll should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for res HR payroll should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for res HR payroll should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of work eligibility for res HR payroll should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for res HR payroll should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for res HR payroll should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for res HR payroll should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of my office home working days for res HR payroll should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="e805246d85982c09980aa430f6454109f22e201f15b6030c5f449f608a4e0180">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="439de073771e623a8eff2f223575d509c5ff57d2f73b74e740e7923939fd090a.html" title="View test results">RES ED11 HR remuneraton</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Johanna Angela Del Rosario'</p>
+                                                            <p>When i search for an employee using the header search bar: Mahmoud Agig Abdelrahim</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of biographical info fields for res HR rem should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of personal info fields for res HR rem should be correctly set</p>
+                                                            <p>When i go to national ID</p>
+                                                            <p>Then the edit property of national ID fields for res HR rem should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of email info for res HR rem should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of phone info for res HR rem should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of address for res HR rem should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of emergency contact info for res HR rem should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of employment details for res HR rem should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of job relationship for res HR rem should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of job info for res HR rem should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of non recurring pay elements for res HR rem should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of compensation info for res HR rem should be correctly set: 10/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="613b5e17b4d3bea3001c317a58a85b0a8e69adb3c72cde7a572a6c26962e1547">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="eac2a2814f140fdacfe484132805fdad03ccc0d965e23ab32e3c92ad4545e2cf.html" title="View test results">RES ED15 HRAX</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Ismail Osman Haroun Osman'</p>
+                                                            <p>When i search for an employee using the header search bar: Mahmoud Agig Abdelrahim</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of RES employee for biographical info fields for HRAX should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of RES employee for personal info fields for HRAX should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for email info fields for HRAX should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for phone info fields for HRAX should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of RES employee for address fields for HRAX should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for emergency contact info fields for HRAX should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of RES employee for employment info fields for HRAX should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of RES employee for job relationship for HRAX should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of RES employee for job information for HRAX should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of RES employee for compensation information for HRAX should be correctly set: 10/05/2024</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="8862da9fc0419490feffd23a6525629279135a697360a9e855b0bcf0194f3f17">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="4875acb13cff0112e21d2dc17d5c9bc2a46434dd039316392c7aa1fa610befa3.html" title="View test results">Check hra res employee data</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'Maria Pamela Peroy'</p>
+                                                            <p>When i search for an employee using the header search bar: Benjamin IBARRA</p>
+                                                            <p>When i go to biographical info</p>
+                                                            <p>Then the edit property of RES employee for biographical info fields for HRA should be correctly set</p>
+                                                            <p>When i go to personal info</p>
+                                                            <p>Then the edit property of RES employee for personal info fields for HRA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for email info fields for HRA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for phone info fields for HRA should be correctly set</p>
+                                                            <p>When i go to address</p>
+                                                            <p>Then the edit property of RES employee for address info fields for HRA should be correctly set</p>
+                                                            <p>When i go to contact info</p>
+                                                            <p>Then the edit property of RES employee for emergency contact fields for HRA should be correctly set</p>
+                                                            <p>When i go to employment details</p>
+                                                            <p>Then the edit property of RES employee for employment information fields for HRA should be correctly set</p>
+                                                            <p>When i go to work eligibility</p>
+                                                            <p>Then the edit property of RES employee for work eligibility fields for HRA should be correctly set</p>
+                                                            <p>When i go to job relationship</p>
+                                                            <p>Then the edit property of RES employee for job relationships fields for HRA should be correctly set</p>
+                                                            <p>When i go to job info</p>
+                                                            <p>Then the edit property of RES employee for job information fields for HRA should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to non recurring pay elements</p>
+                                                            <p>Then the edit property of RES employee for non recurring pay elements fields for HRA should be correctly set</p>
+                                                            <p>When i go to compensation info</p>
+                                                            <p>Then the edit property of RES employee for compensation information fields for HRA should be correctly set: 10/05/2024</p>
+                                                            <p>When i go to my office home working days</p>
+                                                            <p>Then the edit property of RES employee for my office home working days fields for HRA should be correctly set</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['61%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '39%', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 11}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 7}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="d976339cf80b1f2a82dd560e1709f37b9661d24fc09191d2c40854dbf174db55.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">11</td>
+                                                <td class="automated-stats">61%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                             <td colspan="3"><a href="04af5d05cce740bb82b2410a416f02f10e61747b195d36f40ae5b76dfda50334.html"><i
+                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="fd675a4c26dc88356505f3950124591e3a9e7a7d10a8dd37b008d4d955a59844.html"><i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                    </td>
+                                                <td class="automated-stats">7</td>
+                                                <td class="automated-stats">39%</td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">18</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td> 8h  13m 42s</td>
+                                                        <td> 8h  13m 7s</td>
+                                                        <td>6s</td>
+                                                        <td> 1h  11m 35s</td>
+                                                        <td> 27m 25s</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="0a53b3582d3280f78bf0e38d15634a818a21362c55b58f0bd3f5a1767d243bf6.html">CH ED01 employee on other</a>
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td>22:44:57</td>
+                                                    <td>15m 39s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="21dd1bf96acf9bb5635ac6a1c35e8bfb3b2c3bb344a0e6542fa702263ce86556.html">CH ED02 employee on themselves</a>
+                                                    </td>
+                                                    <td>24</td>
+                                                    <td>23:00:39</td>
+                                                    <td>3m 43s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="7187981f97686beb3f473fe93f97c90ebc0d9c877a033c94173e7f68d046d973.html">CH ED03 HR CA</a>
+                                                    </td>
+                                                    <td>30</td>
+                                                    <td>23:04:23</td>
+                                                    <td>1h 8m 13s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4e459d020e438ff74b2e40bd9d516ade9658c1fc4754d3ee4fbee833c53fe7b8.html">CH ED03 HR pay roll</a>
+                                                    </td>
+                                                    <td>28</td>
+                                                    <td>00:12:38</td>
+                                                    <td>37m 51s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="3f1bad0528d0aee643a8ff9394a1eb66e7e9fbf106b57d3fe9aa7b5346795baa.html">CH ED03 HR remuneraton</a>
+                                                    </td>
+                                                    <td>26</td>
+                                                    <td>00:50:30</td>
+                                                    <td>2m 45s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1.html">CH ED04 HRIS</a>
+                                                    </td>
+                                                    <td>31</td>
+                                                    <td>00:53:17</td>
+                                                    <td>1h 11m 36s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="09cd04f7e3e87f0a7a7a34d624a829e64a8ff8e56440137f13bb6c3f5487b256.html">CH ED05 HRM</a>
+                                                    </td>
+                                                    <td>24</td>
+                                                    <td>02:04:54</td>
+                                                    <td>35m 13s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="a6f0c8413b6dac29b28782fdc2f8eeb9d9fef87837d6037a33a4762dcae3349e.html">CH ED08 LM</a>
+                                                    </td>
+                                                    <td>14</td>
+                                                    <td>02:40:09</td>
+                                                    <td>25m 50s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="71507d3c39d8416ba01aa8b6c67a45146187445798153ddd77f6e098944a9bae.html">CH ED11 talent manager</a>
+                                                    </td>
+                                                    <td>14</td>
+                                                    <td>03:06:01</td>
+                                                    <td>22m 20s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="55c513314304629800ec9ec1cc2eae1b10db339a56177afd6a4a24dffee9f188.html">RES ED02 employee on themselves</a>
+                                                    </td>
+                                                    <td>24</td>
+                                                    <td>03:28:24</td>
+                                                    <td>57m 28s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4ed07567202b3329263555156aeecf55f76b78a30f3c6cca36a2e81578aa8177.html">RES ED03 line manager</a>
+                                                    </td>
+                                                    <td>16</td>
+                                                    <td>04:25:53</td>
+                                                    <td>30m 23s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="95a4705ef42cdd7681bdcd6c490001282ae9de2cad825f8c747da220f1410171.html">RES ED04 HRM</a>
+                                                    </td>
+                                                    <td>24</td>
+                                                    <td>04:56:18</td>
+                                                    <td>2m 45s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="46314e8496b59defcc11c3b2485c0e1c6859641e052930c72c5c9fd0f94c9c3c.html">RES ED05 HRIS</a>
+                                                    </td>
+                                                    <td>28</td>
+                                                    <td>04:59:05</td>
+                                                    <td>1h 8m 53s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="b1caf90fe3c160116929cf095279bba2886ef5ccd477aee286b35986b7491b97.html">RES ED11 HR CA</a>
+                                                    </td>
+                                                    <td>28</td>
+                                                    <td>06:08:00</td>
+                                                    <td>6s 251ms</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="8dd2741b5c0a4bfe081baa7027d707b281c15aee5a513840d987ae81864c201a.html">RES ED11 HR pay roll</a>
+                                                    </td>
+                                                    <td>29</td>
+                                                    <td>06:08:07</td>
+                                                    <td>3m 9s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="439de073771e623a8eff2f223575d509c5ff57d2f73b74e740e7923939fd090a.html">RES ED11 HR remuneraton</a>
+                                                    </td>
+                                                    <td>26</td>
+                                                    <td>06:11:18</td>
+                                                    <td>3m 2s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="eac2a2814f140fdacfe484132805fdad03ccc0d965e23ab32e3c92ad4545e2cf.html">RES ED15 HRAX</a>
+                                                    </td>
+                                                    <td>22</td>
+                                                    <td>06:14:23</td>
+                                                    <td>43m 40s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="4875acb13cff0112e21d2dc17d5c9bc2a46434dd039316392c7aa1fa610befa3.html">Check hra res employee data</a>
+                                                    </td>
+                                                    <td>28</td>
+                                                    <td>06:58:05</td>
+                                                    <td>1m 6s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.1.6</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

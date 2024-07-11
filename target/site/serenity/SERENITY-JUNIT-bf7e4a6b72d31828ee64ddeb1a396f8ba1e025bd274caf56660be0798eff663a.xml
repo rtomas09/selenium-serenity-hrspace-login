@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="org.icrc.hrspace.TIMEOFF.EmployeeTimeOffAfghanistanSpecialLeave" skipped="0" tests="1" time="271.9" timestamp="2024-05-16 12:28:50"><testcase classname="org.icrc.hrspace.TIMEOFF.EmployeeTimeOffAfghanistanSpecialLeave" name="Check if recurring absence cannot be ticked in special leave serious illness"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.TimeOffSteps.then_recurring_absence_checkbox_is_not_clickable(TimeOffSteps.java:298)&#13;
+steps.TIMEOFF.TimeOffManagementSteps.when_the_employee_checks_if_recurring_absence_cannot_be_ticked(TimeOffManagementSteps.java:1489)&#13;
+org.icrc.hrspace.TIMEOFF.EmployeeTimeOffAfghanistanSpecialLeave.checkIfRecurringAbsenceCannotBeTickedInSpecialLeaveSeriousIllness(EmployeeTimeOffAfghanistanSpecialLeave.java:294)&#13;
+</system-err></testcase></testsuite>

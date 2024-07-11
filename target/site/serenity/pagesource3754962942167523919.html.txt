@@ -1,0 +1,439 @@
+<html dir="ltr" lang="en-US" class="sap-tablet sap-desktop sap-combi sapUiTheme-sap_horizon sapUiMedia-Std-Desktop sapUiMedia-StdExt-LargeDesktop" data-sap-ui-browser="cr124" data-sap-ui-os="win10" data-sap-ui-animation-mode="full" data-sap-ui-animation="on" style="height: 100%;"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<!-- verp-client(1.0.0-20240503025016-3d5a341-2659): modules={
+ajaxservice:"1.0.6",
+extlib:"1.3.0",
+juic:"1.7.5",
+"people-profile-legacy":"1.1.2",
+surj:"1.0.41"
+} -->
+
+<meta id="PerfLog.requestStats" name="pl.rs" content="SQLT=0&amp;CCON=0&amp;FWR=0&amp;NRE=0&amp;CEXT=0&amp;ST=1715266988765&amp;EID=EVENT-PLT-LOGINPAGE-rb22abe14-20240509150308-49408&amp;CLOC=0&amp;CREM=0&amp;NWR=0&amp;CPU=14&amp;SVT=16&amp;SQLC=0&amp;SCPU=4&amp;CSUP=1&amp;MEM=5944&amp;UCPU=10&amp;FRE=0&amp;TOK=824546FA905E2235FEA8">
+<script src="/verp/vmod_v1/ui/perflog-lib/resources_1.0.21/perflog-lib.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+/* verp-client: SMRF Globals */!function(w){function set(k,v){Object.assign(k==='window'?w:(w[k]=w[k]||{}),v)}
+/* verp-client: init MSGS */function f(p){return p&&p.replace&&s.call(arguments,1).reduce(function(p,a,i) {return p.replace(new RegExp('\\{'+i+'\\}','g'),a)}, p)}function c() {}c.prototype.format=f;w.MessageFormatter=c;w.sfMessageFormat=new c();var s=Array.prototype.slice;var m=w.MSGS=w.jsSFMessages=w.MSGS||{};m.get=function(k){return f.apply(null,[this[k]].concat(s.call(arguments,1)))},m.MessageFormatter={format:function(){return f.apply(null,arguments)}};
+set("window",{
+dateFormatSymbols:{
+ampm:["AM","PM"],
+firstDayOfWeek:2,
+months:["January","February","March","April","May","June","July","August","September","October","November","December"],
+shortMonths:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+shortWeekdays:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+singleCharWeekdays:["S","M","T","W","T","F","S"],
+weekdays:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+},
+decimalFormatSymbols:{
+currencySymbol:"\xa3",
+decimalSeparator:".",
+exponential:"E",
+groupingSeparator:",",
+infinity:"\u221e",
+monetarySeparator:".",
+nan:"\ufffd",
+patternSeparator:";",
+percent:"%",
+zeroDigit:"0"
+},
+firstDayOfWeek:2
+})
+}(window)
+</script>
+<script src="/verp/vmod_v1/ui/extlib/jshash_2.2/sha256.js" type="text/javascript"></script>
+<script src="/verp/vmod_v1/ui/juic/js/InterstitialUtil_7649472d137fbe6e08c4ad240fcd5722.js" type="text/javascript"></script>
+<script src="/verp/vmod_v1/ui/juic/js/GlobalFunctions_8abd8425f72196be8d1f91faf8b989ba.js" type="text/javascript"></script>
+<script type="text/javascript">
+ var ajaxSecKey="FWLL6zX7GIZGOP2p1QIxzbUxKxG%2fcSf86ky8Oy2FsOs%3d";var timeout_redirect_url="/login?company=ICRCTEST1";;
+function getTimeoutPage(){return '/login?company=ICRCTEST1'}
+</script>
+<script src="/verp/vmod_v1/ui/surj/js/core/config-util_fbea61365d78f27bf89f98951aea36da.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<meta name="viewport" content="minimum-scale=0.25, maximum-scale=4.0, user-scalable=yes">
+<meta http-equiv="expires" content="0">
+<meta name="msapplication-config" content="none">
+
+
+<script>!function(w,s,r){w[s]=w[s]||{};for(var a in r)w[s][a]=r[a]}(window,'RESOURCES',{"/ui/sapui5/main/sap-ui-core.js":"/verp/vmod_v1/ui/sapui5-main/resources_1.120.5/resources/sap-ui-core.js","/ui/sapui5/lite/common-0.js":"/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/common-0.js","/ui/sapui5/latest/sap-ui-core.js":"/verp/vmod_v1/ui/sapui5-latest/resources_1.120.5/resources/sap-ui-core.js","/ui/sapui5/latestlite/common-0.js":"/verp/vmod_v1/ui/sapui5-bundles-latest/resources_1.120.5-10/common-0.js","/ui/sapui5/vsaas_b2305/sap-ui-core.js":"/verp/vmod_v1/ui/sapui5-vsaas/resources_1.108.5/resources/sap-ui-core.js","/ui/sapui5/vsaas_b2405/sap-ui-core.js":"/verp/vmod_v1/ui/sapui5-vsaasnext/resources_1.120.5/resources/sap-ui-core.js","/ui/sapui5/beta/sap-ui-core.js":"https://sapui5.hana.ondemand.com/1.120.5/resources/sap-ui-core.js","/ui/sapui5/betalite/common-0.js":"/verp/vmod_v1/ui/sapui5-bundles-beta/resources_1.120.5-10/common-0.js","/ui/sapui5/alpha/sap-ui-core.js":"https://sapui5.hana.ondemand.com/1.120.5/resources/sap-ui-core.js","/ui/sapui5/alphalite/common-0.js":"/verp/vmod_v1/ui/sapui5-bundles-alpha/resources_1.120.5-10/common-0.js"})</script>
+<style>@font-face {font-family: 'SAP-icons';src: url('/verp/vmod_v1/ui/sapui5-main/resources_1.120.5/resources/sap/ui/core/themes/base/fonts/SAP-icons.woff2') format('woff2');}@font-face {font-family: 'SF-supp-icons';src: url('/verp/vmod_v1/ui/surj/resources_1.4/SF-supp-icons.eot');src: local('☺'),url('/verp/vmod_v1/ui/surj/resources_1.4/SF-supp-icons.eot') format('embedded-opentype'),url('/verp/vmod_v1/ui/surj/resources_1.4/SF-supp-icons.ttf') format('truetype');}</style>
+        <script>!function(i,n,o,a,f,r){function c(i,n,o){if(n=i[n]=i[n]||{},o)for(var a in o)n[a]=o[a]}c(i,n),c(i[n],'resourceRoots',{"sap.sf.surj.shell":"/verp/vmod_v1/ui/sap.sf.surj.shell/resources_1.5.33/sap/sf/surj/shell/","sap.sf.onboarding2.dashboard2":"/ui/onboarding2/resources_1256425E9DA2A357C792FAE3F0ED4E77/sap/sf/onboarding2/dashboard2/","sap.sf.changepasswordpopup":"/ui/passwordmanagement/resources_2613391709816710C4BDE69376EEAE5C/changepasswordpopup/","sap.sf.quickcard":"/ui/quickcard/resources_AF654E8B82CED0555405BE160EC8E0E7/sap/sf/quickcard/","sap.sf.todo":"/ui/todoui/resources_B9618ADFA437AD8028DA532D90560677/sap/sf/todo/","sap.sf.surj.commons":"/verp/vmod_v1/ui/sap.sf.surj.commons/resources_1.5.3/sap/sf/surj/commons/","sap.sf.peopleprofile":"/verp/vmod_v1/ui/sap.sf.peopleprofile/resources_1.48.3/sap/sf/peopleprofile/","sap.sf.userassistance":"/ui/userassistance/resources_D31A49DF394D08F371BB9FEF2CAE9256/sap/sf/userassistance/","xweb.widget-loader":"/verp/vmod_v1/ui/widget-loader/resources_1.0.59/","xweb.smrf-loader":"/verp/vmod_v1/ui/smrf-loader/resources_1.1.15/","sap.sf.notification":"/ui/notification/resources_DB3D952EC2467278A1F3D5176CDBC3EA/sap/sf/notification/","sap.sf.onb2compliance.forms":"/ui/onb2compliance/resources_D96EBBE9A2D6FAF823C6D6668A9BB49B/sap/sf/onb2compliance/forms/","sap.sf.timemanagement-common":"/verp/vmod_v1/ui/timemanagement-common/resources_0.13.0/sap/sf/timemanagement-common/","sap.sf.competencypicker":"/ui/jdmng/resources_0C38BB6F1B792C8F58E3B5FCEA5262E9/sap/sf/competencypicker/","sap.sf.onboarding2.common":"/ui/onboarding2/resources_6FFC42092DA4E796F289F0879E2B785A/sap/sf/onboarding2/common/","sap.sf.ips":"/ui/inproductsupport/resources_EFF515F12DBA40510406A597DC6C91C2/sap/sf/ips/","sap.sf.commons":"/verp/vmod_v1/ui/sap.sf.commons/resources_1.10.0/sap/sf/commons/","sap.sf.onboarding2.dashboard":"/ui/onboarding2/resources_DC2809A27E92B0E5CC30AE594497CE19/sap/sf/onboarding2/dashboard/","sap.sf.timemanagementcommonui":"/ui/timemanagementcommonui/resources_CA1A08B5B318B4D7CA6E950E82A7211B/sap/sf/timemanagementcommonui/","sap.sf.homepage3.core":"/ui/homepage3/resources_47C0640E9FCAE849B165D01961CB7CC2/sap/sf/homepage3/core/","sap.sf.onboarding2.homepage":"/ui/onboarding2/resources_0F686CED2184B7BABD415830D0E81496/sap/sf/onboarding2/homepage/","sap.sf.digitalexperience":"/ui/digitalexperience/resources_7119B75290C28A0CA4945BA133D7564F/sap/sf/digitalexperience/","sap.sf.core-utils":"/verp/vmod_v1/ui/core-utils/resources_2.3.20/","sap.sf.time-payout-purchase-common":"/verp/vmod_v1/ui/time-payout-purchase-common/resources_0.2.0/sap/sf/time-payout-purchase-common/","sap.extent.uilib":"/verp/vmod_v1/ui/sap.extent.uilib/resources_1.28.2/","xweb.common-webcomponents":"/verp/vmod_v1/ui/common-webcomponents/resources_3.3.14/","sap.sf.juic":"/verp/vmod_v1/ui/juic/resources_a6342ea96a4909ade5b20d7798667483/sap/sf/juic/","sap.sf.timemanagement.payoutAndPurchase":"/ui/absencemanagementui/resources_D3E699646C369855EB3090763BB82D3C/sap/sf/timemanagement/payoutAndPurchase/","sap.sf":"/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/","":"/verp/vmod_v1/ui/sapui5-main/resources_1.120.5/resources/","sap.sf.lite":"/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/"}),c(i,'_pathMappings',{"sap/sf/surj/commons/i18n/messagebundle.properties":"/messagebundle/_/vmod_1c6ff3cb/verp/ui/sap.sf.surj.commons/resources/sap/sf/surj/commons/i18n/messagebundle.properties","sap/sf/surj/shell/i18n/messagebundle.properties":"/messagebundle/_/vmod_8239917f/verp/ui/sap.sf.surj.shell/resources/sap/sf/surj/shell/i18n/messagebundle.properties","sap/sf/timemanagement-common/i18n/messagebundle.properties":"/messagebundle/_/vmod_148da7cc/verp/ui/timemanagement-common/resources/sap/sf/timemanagement-common/i18n/messagebundle.properties","sap/sf/todo/i18n/messagebundle.properties":"/messagebundle/_/vmod_a9053b83/ui/todoui/resources/sap/sf/todo/i18n/messagebundle.properties","sap/sf/notification/i18n/messagebundle.properties":"/messagebundle/_/vmod_ae3b7e79/ui/notification/resources/sap/sf/notification/i18n/messagebundle.properties","sap/sf/competencypicker/i18n/messagebundle.properties":"/messagebundle/_/vmod_ca599127/ui/jdmng/resources/sap/sf/competencypicker/i18n/messagebundle.properties","sap/sf/homepage3/core/i18n/messagebundle.properties":"/messagebundle/_/vmod_8b7d69b1/ui/homepage3/resources/sap/sf/homepage3/core/i18n/messagebundle.properties","sap/sf/quickcard/i18n/messagebundle.properties":"/messagebundle/_/vmod_bbbb9891/ui/quickcard/resources/sap/sf/quickcard/i18n/messagebundle.properties","sap/sf/peopleprofile/i18n/messagebundle.properties":"/messagebundle/_/vmod_932e8605/verp/ui/sap.sf.peopleprofile/resources/sap/sf/peopleprofile/i18n/messagebundle.properties","sap/sf/nomination/i18n/messagebundle.properties":"/messagebundle/_/vmod_ca599127/ui/sm/resources/sap/sf/nomination/i18n/messagebundle.properties","sap/employeecentral/timemanagement/common/i18n/messagebundle.properties":"/messagebundle/_/vmod_4dff5a64/ui/absencemanagementui/resources/sap/employeecentral/timemanagement/common/i18n/messagebundle.properties","sap/sf/onboarding2/common/i18n/messagebundle.properties":"/messagebundle/_/vmod_cf8dfaa4/ui/onboarding2/resources/sap/sf/onboarding2/common/i18n/messagebundle.properties","sap/employeecentral/timemanagement/controls/i18n/messagebundle.properties":"/messagebundle/_/vmod_4dff5a64/ui/absencemanagementui/resources/sap/employeecentral/timemanagement/controls/i18n/messagebundle.properties","sap/sf/commons/i18n/messagebundle.properties":"/messagebundle/_/vmod_55c73b2e/verp/ui/sap.sf.commons/resources/sap/sf/commons/i18n/messagebundle.properties","xweb/common-messagebundles/i18n/common-components/messagebundle.properties":"/messagebundle/_/vmod_d8d27be9/verp/ui/common-messagebundles/resources/i18n/common-components/messagebundle.properties","sap/sf/onboarding2/homepage/i18n/messagebundle.properties":"/messagebundle/_/vmod_8b7d69b1/ui/onboarding2/resources/sap/sf/onboarding2/homepage/i18n/messagebundle.properties","sap/sf/onb2compliance/forms/i18n/messagebundle.properties":"/messagebundle/_/vmod_908133dc/ui/onb2compliance/resources/sap/sf/onb2compliance/forms/i18n/messagebundle.properties","xweb/common-webcomponents/src/i18n/messagebundle.properties":"/messagebundle/_/vmod_d27baba8/verp/ui/common-webcomponents/resources/src/i18n/messagebundle.properties","sap/employeecentral/timemanagement/workschedule/i18n/messagebundle.properties":"/messagebundle/_/vmod_4dff5a64/ui/absencemanagementui/resources/sap/employeecentral/timemanagement/workschedule/i18n/messagebundle.properties","sap/sf/userassistance/i18n/messagebundle.properties":"/messagebundle/_/vmod_4dff5a64/ui/userassistance/resources/sap/sf/userassistance/i18n/messagebundle.properties","sap/sf/timemanagement/payoutAndPurchase/i18n/messagebundle.properties":"/messagebundle/_/vmod_8ea90232/ui/absencemanagementui/resources/sap/sf/timemanagement/payoutAndPurchase/i18n/messagebundle.properties","sap/sf/onboarding2/dashboard/i18n/messagebundle.properties":"/messagebundle/_/vmod_7a07eebe/ui/onboarding2/resources/sap/sf/onboarding2/dashboard/i18n/messagebundle.properties","sap/sf/onboarding2/dashboard2/i18n/messagebundle.properties":"/messagebundle/_/ui/onboarding2/resources/sap/sf/onboarding2/dashboard2/i18n/messagebundle.properties","sap/sf/time-payout-purchase-common/i18n/messagebundle.properties":"/messagebundle/_/vmod_f2f1118e/verp/ui/time-payout-purchase-common/resources/sap/sf/time-payout-purchase-common/i18n/messagebundle.properties","sap/sf/timemanagementcommonui/i18n/messagebundle.properties":"/messagebundle/_/vmod_4dff5a64/ui/timemanagementcommonui/resources/sap/sf/timemanagementcommonui/i18n/messagebundle.properties","sap/m/messagebundle.properties":"/messagebundle/_/vmod_4f6a0511/sap.m!/verp/ui/sapui5-main/resources/resources/sap/m/messagebundle.properties","sap/ui/core/messagebundle.properties":"/messagebundle/_/vmod_9dde8a0e/common!/verp/ui/sapui5-main/resources/resources/sap/ui/core/messagebundle.properties"})}(window,'sap-ui-config');</script>
+
+<script type="text/javascript">
+
+  (function() {
+    function _listener(e) {
+      _initCSPViolations.errors.push(e);
+    }
+    window._initCSPViolations=window._initCSPViolations || {
+      errors:[],
+      cleanup: function() {
+        document.removeEventListener('securitypolicyviolation', _listener);
+        window._initCSPViolations = null;
+      }
+    };
+    document.addEventListener('securitypolicyviolation', _listener);
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+<meta name="xweb-widgets" content="">
+
+
+<script data-ui5-config="" type="application/json"></script>
+
+
+
+
+
+  
+  <meta name="robots" content="noindex, nofollow, noarchive">
+    
+
+<meta id="PerfLog.eventId" content="EVENT-PLT-LOGINPAGE-rb22abe14-20240509150308-49408">
+<meta id="PerfLog.usePageRequestStartTime" content="false">
+<meta name="description" content="Log into your SAP SuccessFactors HXM Suite system. Your username is assigned to you by your organization. If you can’t find it, please contact your system administrator.">
+
+<meta id="resourcemapping:/ui/login/resources_CF650ADD91FD61BEAEBA03B779E52D45/sap/sf/login/i18n/messagebundle.properties" content="/messagebundle/_/vmod_1727f89f/ui/login/resources/sap/sf/login/i18n/messagebundle.properties">
+<title>Login - SAP SuccessFactors</title>
+
+
+<style type="text/css">
+body {
+  visibility: hidden;
+}
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://hcm12preview.sapsf.eu/verp/vmod_v1/ui/sapui5-main/resources_1.120.5/resources/sap/ui/core/themes/sap_horizon/library.css" id="sap-ui-theme-sap.ui.core" data-sap-ui-ready="true"><link rel="stylesheet" href="https://hcm12preview.sapsf.eu/verp/vmod_v1/ui/sapui5-main/resources_1.120.5/resources/sap/m/themes/sap_horizon/library.css" id="sap-ui-theme-sap.m" data-sap-ui-ready="true"><link rel="stylesheet" href="https://hcm12preview.sapsf.eu/verp/vmod_v1/ui/sap.sf.surj.shell/resources_1.5.33/sap/sf/surj/shell/themes/sap_horizon/library.css" id="sap-ui-theme-sap.sf.surj.shell" data-sap-ui-ready="true"><link rel="stylesheet" href="https://hcm12preview.sapsf.eu/verp/vmod_v1/ui/sapui5-main/resources_1.120.5/resources/sap/ui/layout/themes/sap_horizon/library.css" id="sap-ui-theme-sap.ui.layout" data-sap-ui-ready="true"><meta name="format-detection" content="telephone=no"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link href="/public/theme-api/css/ICRCTEST1/1y3zcceymw/ui/login/css/bizx/BizXLoginTheme.dcss" type="text/css" rel="stylesheet" id="globalLoginCss" data-bizx-company="ICRCTEST1"><meta id="perfLogData0" content="{&quot;callId&quot;:&quot;5231112127-0&quot;,&quot;moduleId&quot;:&quot;LOGIN&quot;,&quot;pageId&quot;:&quot;LOGIN&quot;,&quot;pageQualifier&quot;:&quot;BIZX_LOGIN&quot;,&quot;eventId&quot;:&quot;EVENT-PLT-LOGINPAGE-rb22abe14-20240509150308-49408&quot;,&quot;ST&quot;:&quot;1715266988765&quot;,&quot;STC&quot;:&quot;1715266988424&quot;,&quot;ETC&quot;:&quot;1715266990881&quot;,&quot;MEM&quot;:&quot;5944&quot;,&quot;NRE&quot;:&quot;0&quot;,&quot;NWR&quot;:&quot;0&quot;,&quot;SCPU&quot;:&quot;4&quot;,&quot;SQLC&quot;:&quot;0&quot;,&quot;SQLT&quot;:&quot;0&quot;,&quot;SVT&quot;:&quot;16&quot;,&quot;UCPU&quot;:&quot;10&quot;,&quot;CPU&quot;:&quot;14&quot;,&quot;FRE&quot;:&quot;0&quot;,&quot;FWR&quot;:&quot;0&quot;,&quot;CCON&quot;:&quot;0&quot;,&quot;CSUP&quot;:&quot;1&quot;,&quot;CLOC&quot;:&quot;0&quot;,&quot;CEXT&quot;:&quot;0&quot;,&quot;CREM&quot;:&quot;0&quot;,&quot;jsNum&quot;:&quot;19&quot;,&quot;jsNcNum&quot;:&quot;0&quot;,&quot;cssNum&quot;:&quot;7&quot;,&quot;imgNum&quot;:&quot;2&quot;,&quot;reqNum&quot;:&quot;3&quot;,&quot;renderTime&quot;:&quot;1434&quot;,&quot;TOK&quot;:&quot;824546FA905E2235FEA8&quot;,&quot;TTB&quot;:&quot;845&quot;,&quot;RSR&quot;:&quot;874&quot;,&quot;DIA&quot;:&quot;1265&quot;,&quot;DCP&quot;:&quot;2317&quot;,&quot;RTT&quot;:&quot;849&quot;,&quot;CRT&quot;:&quot;848&quot;,&quot;SRT&quot;:&quot;1&quot;,&quot;VER&quot;:&quot;2&quot;}"></head>
+
+<body class="login_branded globalThemed" style="visibility: visible; height: 100%;"><div id="sap-ui-static" data-sap-ui-area="sap-ui-static" style="height: 0px; width: 0px; overflow: hidden; float: left;"><span id="sap-ui-static-firstfe" tabindex="-1" aria-hidden="true" style="font-size: 0px;"></span><span id="__text0" data-sap-ui="__text0" class="sapUiInvisibleText" aria-hidden="true">Available Values</span><span id="companyEntry-intHeader-InvisibleText" data-sap-ui="companyEntry-intHeader-InvisibleText" class="sapUiInvisibleText" aria-hidden="true">Header actions</span><span id="login-intHeader-InvisibleText" data-sap-ui="login-intHeader-InvisibleText" class="sapUiInvisibleText" aria-hidden="true">Header actions</span><span id="__invisiblemessage-polite" data-sap-ui="__invisiblemessage-polite" class="sapUiInvisibleMessagePolite" role="status" aria-live="polite"></span><span id="__invisiblemessage-assertive" data-sap-ui="__invisiblemessage-assertive" class="sapUiInvisibleMessageAssertive" role="status" aria-live="assertive"></span><span id="__text1" data-sap-ui="__text1" class="sapUiInvisibleText" aria-hidden="true">Value help available</span><span id="__text2" data-sap-ui="__text2" class="sapUiInvisibleText" aria-hidden="true">Emphasized</span></div>
+
+
+<script type="text/javascript">
+
+
+
+
+
+var doFrameBustingCheck = true;
+
+
+
+
+if (doFrameBustingCheck && (top != self)) top.location = self.location;
+
+window.bizXLoginStartup = {
+    pageId : "login",
+    parameters : {company:"ICRCTEST1",disableQRCode:false,companyTheme:{id:"1y3zcceymw",logo:"https://performancemanager5.successfactors.eu/doc/custom/ICRCPROD/logo.png",logoAlt:"ICRC (Test 1) UAT"},loginMessage:"To log in to company <span class=\"companyIDText\">ICRCTEST1<\/span>, enter your user name and password below. You can also log in to <a href=\"/login?company=#/companyEntry\" onclick=\"return enterDifferentCompanyID();\">a different company<\/a>.",hiddenInputs:{bplte_userid:""}}
+};
+
+function openShowMeHelp(helpURL) {
+  // not sure how safe this url, also window.open reference is not use, so it's ok
+  // category: 3 refer to https://confluence.successfactors.com/display/ENG/Reverse+Tabnabbing+threat
+   window.open(helpURL,'sfhelp','noopener,noreferrer,scrollbars,resizable,height=513,width=460');
+}
+
+function goToMainContent() {
+    if (window.jQuery && window.jQuery.sap) {
+        var bizXLogin = jQuery.sap.getObject('sap.sf.login.bizx.BizXLogin');
+        bizXLogin && bizXLogin.goToMainContent()
+    }
+}
+
+
+surj_append_config('sap-ui-config', {
+  libs: 'sap.m, sap.sf',
+  bindingSyntax : 'complex',
+  theme : 'sap_horizon',
+  preload : 'sync',
+  'xx-supportedLanguages' : ['default'],
+  language : 'en_US',
+  onInit : function() {
+    var sViewName = "sap.sf.login.bizx.BizXLogin";
+    var oController = sap.ui.controller(sViewName);
+    sap.sf.login.bizx.BizXLogin.setController(oController);
+    var oView = sap.ui.view({
+        type : sap.ui.core.mvc.ViewType.JS,
+        viewName : sViewName,
+        controller : oController
+    }).placeAt('bodyContent');
+  }
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+surj_append_config('sap-ui-config', {
+  resourceroots: {
+    'sap.sf.login': surj_extract_path('/ui/login/resources_CF650ADD91FD61BEAEBA03B779E52D45/sap/sf/login/root.txt')
+  }
+});
+
+</script>
+
+<meta id="uimode" content="sapui5">
+<link href="/ui/uicore/css/revolutionfont-Icons_7a1c33c1a80f98cdbff32b8f7c54a6ab.css" type="text/css" rel="stylesheet">
+
+<script src="/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js" type="text/javascript"></script>
+
+<meta id="altUI5" content="lite">
+<script type="text/javascript">
+/* verp-client: SMRF Globals */!function(w){function set(k,v){Object.assign(k==='window'?w:(w[k]=w[k]||{}),v)}
+set("IMAGES",{
+"/ui/surj/img/_.gif":"/verp/vmod_v1/ui/surj/img/__325472601571f31e1bf00674c368d335.gif"
+})
+set("MSGS",{
+COMMON_AJAX_DEFAULT_ERROR:"An application error occurred. Please try again later, or notify support if the issue keeps occurring.",
+COMMON_AJAX_EXCEPTION_CONVERTER_ERROR:"An application error occurred. Please try again later, or notify support (with the error information of errorID={0}, timestamp={1}, and the version information from the current screen) if the issue keeps occurring. \n\n(Once you have read this message, you can dismiss it using either the \"OK\" or \"Cancel\" button.)",
+COMMON_AjaxService_Error_Details_Description:"Please copy the error information below and send it to your support group if the issue keeps occurring.",
+COMMON_AjaxService_Error_Try_Search:"<span>Please click <a href=\"#\" rel=\"noopener\" role=\"link\" class=\"docLink sapMLnk\" onclick=\"sap.sf.surj.AjaxServiceError.invokeKBSearch(\'{0}\'); return false;\">this link<\/a> to automatically search for any knowledge base articles related to this error, or refresh the page and try the action again.<\/span>",
+COMMON_AjaxService_Found_KBA:"<span>We found the following Knowledge Base Articles related to this error:<\/span>",
+COMMON_AjaxService_NO_RESULT:"<span>We didn\u2019t find any Knowledge Base Articles related to this problem. <\/ br>If the issue continues to occur even after applying the solution in the Knowledge Base Article, or if there are no Knowledge Base Articles returned, please copy below error information and send it to your support group.<\/span>",
+COMMON_AjaxService_Show_More:"<a href=\"#\" rel=\"noopener\" role=\"link\" class=\"docLink sapMLnk\" onclick=\"sap.sf.surj.AjaxServiceError.showErrorInfo(); return false;\" title=\"Clicking on this link will give you the details of this application error.\">Show error<\/a>",
+COMMON_AjaxService_Show_More_Description:"Clicking on this link will give you the details of this application error.",
+COMMON_ERROR_FIND_ARTICLE:"<a tabindex=\"0\" href=\"#\" rel=\"noopener\" onclick=\"{0}; return false;\" target=\"_blank\" role=\"link\" class=\"docLink sapMLnk\">Click this link<\/a><span class=\"exceptionText sapMText\">to find any knowledge base articles related to this error.<\/span>",
+COMMON_Error:"Error occurred",
+COMMON_HIDDEN_FRAME_TITLE:"Hidden frame used to aid in UI rendering",
+COMMON_Ok:"OK"
+})
+set("RESOURCES",{
+"/ui/digitalexperience/resources/sap/sf/digitalexperience/root.txt":"/ui/digitalexperience/resources_7119B75290C28A0CA4945BA133D7564F/sap/sf/digitalexperience/root.txt",
+"/ui/quickcard/resources/sap/sf/quickcard/root.txt":"/ui/quickcard/resources_AF654E8B82CED0555405BE160EC8E0E7/sap/sf/quickcard/root.txt",
+"/ui/surj/js/Logger.js":"/verp/vmod_v1/ui/surj/js/Logger_487aebc9176855da3c40dca6ddf2f490.js"
+})
+}(window)
+</script>
+<script src="/verp/vmod_v1/ui/sfgrp/js/SURJUtil_6336f9068358ddacd80b8a71a32dc88a.js" type="text/javascript"></script>
+<script src="/verp/vmod_v1/ui/sfgrp/js/SURJStartup_f071ca025328eca44e1bbcac871ccd31.js" type="text/javascript"></script>
+<script src="/verp/vmod_v1/ui/surj/js/core/surj-ui-config_b008ec9cc2274853dbdb03dd265d3b0a.js" type="text/javascript"></script>
+
+
+  <script src="/verp/vmod_v1/ui/surj/resources_1.4/lite/resources/sap-ui-core-nojQuery.js" type="text/javascript" id="sap-ui-bootstrap"></script>
+
+  <script src="/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/common-0.js" type="text/javascript"></script>
+
+  <script src="/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/common-1.js" type="text/javascript"></script>
+
+  <script src="/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/common-2.js" type="text/javascript"></script>
+
+  <script src="/verp/vmod_v1/ui/sapui5-bundles-main/resources_1.120.5-10/common-3.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+/* verp-client: SMRF Globals */!function(w){function set(k,v){Object.assign(k==='window'?w:(w[k]=w[k]||{}),v)}
+set("IMAGES",{
+"/ui/login/img/logos/SF_Logo_Lg-Black.png":"/ui/login/img/logos/SF_Logo_Lg-Black_1bb78e4680d8a1d50d3813c5900759df.png",
+"/ui/login/img/logos/SF_Logo_Lg-BlueYellow.png":"/ui/login/img/logos/SF_Logo_Lg-BlueYellow_cd603e40372dc61e1a3203336e03f73d.png"
+})
+set("MSGS",{
+COMMON_RAL_SYSTEM_EXCEPTION_CONVERTER_ERROR:"The sensitive private data on this page could not be displayed because there was a failure writing to the Read Access Log.",
+COMMON_RAL_SYSTEM_EXCEPTION_TITLE:"Read Access Log Error",
+COMMON_SECURITY_SCANNER_EXCEPTION_CONVERTER_ERROR:"This content was rejected by the Security Scan of User Inputs feature because it might contain malicious content. Please review your content for security risks, such as scripting, and try again.",
+COMMON_WAF_BLOCK_EXCEPTION_CONVERTER_ERROR:"There was an error processing your request. Please contact Product Support. Error Code: {0}"
+})
+}(window)
+</script>
+<link href="/ui/login/css/bizx/BizXLogin_d2a2f48db2e450557c99e998eee11b9b.css" type="text/css" rel="stylesheet">
+<script src="/verp/vmod_v1/ui/ajaxservice/js/engine_39685afe0d8a211affe849073ef54a77.js" type="text/javascript"></script>
+<script src="/verp/vmod_v1/ui/ajaxservice/js/AjaxService_3a3496282a4d9dfe5021ade50ce210b0.js" type="text/javascript"></script>
+<script src="/ui/login/js/service/DataService_47865bd95a7101634808bd9d3e27dd84.js" type="text/javascript"></script>
+<script src="/ui/sfgrp/js/loginBizX_4ccfd857456050c6afd8fd76743050d3.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+
+
+
+
+
+(function() {
+    
+    window.getLocationOrigin = function (loc) {
+        if (window.SFDom) {
+            return SFDom.getLocationOrigin(loc);
+        }
+        if (!loc) {
+            loc = window.location;
+        }
+        var origin = loc.origin;
+        if (!origin) {
+            origin = loc.protocol + '//' + loc.hostname;
+            var port = loc.port;
+            if (port) {
+                origin += (':' + port);
+            }
+        }
+        return origin;
+    };
+
+    window.pageHeaderJsonData = {
+      baseUrl: getLocationOrigin(),
+      pageInfo: {
+        moduleId: "LOGIN",
+        pageId: "LOGIN",
+        pageQualifier: "BIZX_LOGIN",
+        achComponent: "LOD-SF-PLA-LPG"
+      },
+      userInfo: {
+        normalizedLocale: 'en_US'
+      }
+    };
+})();
+
+function doLoginRedirectIfNeeded() {
+  var KEY = 'logoutURLForLWBL',
+      url = null,
+      storage;
+  try {
+    if (storage = window.sessionStorage) {
+      url = storage.getItem(KEY);
+      if (url) {
+        if (url == 'null') {
+          url = null;
+        }
+        storage.removeItem(KEY);
+      }
+    }
+  }
+  catch (e) {
+  }
+  if (url) {
+    window.location = url;
+  }
+  return !!url;
+}
+
+function handleBodyInit(postNoRedirectFunc) {
+  var redirect = doLoginRedirectIfNeeded();
+  if (!redirect) {
+    var err;
+    if (postNoRedirectFunc) {
+      try {
+        postNoRedirectFunc();
+      } catch (e) {
+        err = e;
+      }
+    }
+    var doc = window.document,
+        body = doc && doc.body,
+        style = body && body.style,
+        VIS = 'visible';
+    if (style && (style.visibility != VIS)) {
+      style.visibility = VIS;
+    }
+    if (err) {
+      throw err;
+    }
+  }
+}
+
+(function(){
+    function init() {
+      handleBodyInit(window.postNoRedirectFunc);
+    }
+    if (window.SFDOMEvent) {
+      SFDOMEvent.ready(init);
+    } else if (window.jQuery) {
+      jQuery(init);
+    }
+})();
+
+</script>
+
+
+<script src="/verp/vmod_v1/ui/surj/js/LastPageVisitedUtil_a640fdd80e50d51e4891b64b502bc1ab.js" type="text/javascript"></script>
+
+
+
+    <a onclick="goToMainContent(); return false;" class="hiddenAriaContent skipnav" title="Use ALT+1, ALT+SHIFT+1, or CMD+SHIFT+1 to go to the main content.">
+        Skip to Main Content
+    </a>
+    
+
+    
+    <div id="dynamic_header" style="display:none"></div>
+
+
+    
+    
+    
+
+     
+     <div id="versionInfo" style="display:none;">
+        <img src="/ui/uicore/img/successfactors-large_abf7640c2701d6e38bbb0fe0d0fa326b.gif" title="Powered By SuccessFactors" alt="Powered By SuccessFactors"> <br>
+        <h3>SAP SuccessFactors HXM Suite</h3><!-- BEGIN aboutBoxSystemInfo --><br>
+        <strong>Release:</strong> Release build 2405.20240508160033 (20240508160033)<br>
+        <strong>Server:</strong> 232sc33bcf25<br>
+        <strong>Timestamp:</strong> <span dir="ltr">2024-05-09T15:03:08.780+0000</span><br>
+        <br>
+        <!-- END aboutBoxSystemInfo -->
+        <small>
+        Copyright © 2024 SAP SuccessFactors, Inc. All rights reserved. These online services are SuccessFactors confidential and proprietary and for use by authorized SuccessFactors customers only.
+        </small>
+    </div>
+    <div id="footer" style="display:none">
+      <span class="copyrightText">Copyright © <a class="link" rel="noopener" href="https://www.sap.com/products/human-resources-hcm.html?source=productlink-sfpm" onclick="window.open(this.href,'','noopener'); return false;">2024 SAP SuccessFactors, Inc.</a> All rights reserved. These online services are SuccessFactors confidential and proprietary and for use by authorized SuccessFactors customers only. </span><a class="versionInfoLink link" href="javascript:void(0);" id="version_info_link" onclick="sap.sf.login.bizx.BizXLogin.showVersionInfo(this); return false;">Show version information.</a>
+    </div>
+<div id="bodyContent" data-sap-ui-area="bodyContent" style="height: 100%;"><div id="__jsview0" data-sap-ui="__jsview0" data-sap-ui-render="" class="sapUiView sapUiJSView sapUiViewDisplayBlock globalLogin bizxLogin" style="width: 100%; height: 100%;"><div class="globalLoginBgOverlay" data-sap-ui-preserve="__html2" id="__html2"></div><div class="dynamic_header" style="display: none;" data-sap-ui-preserve="__html0" id="__html0"></div><span class="globalLoginLogoURL" style="display:none" data-sap-ui-preserve="__html3" id="__html3"></span><div id="bizXLoginApp" data-sap-ui="bizXLoginApp" data-sap-ui-render="" class="sapMNav sapUiGlobalBackgroundColor sapMApp loginApp" style="width: 100%; height: 1508px;"><div id="bizXLoginApp-BG" class="sapMAppBG sapUiGlobalBackgroundImage"></div><div id="login" data-sap-ui="login" data-sap-ui-render="" class="sapMPage sapMPageBgStandard sapMPageWithHeader sapMPageBusyCoversAll sapMNavItem"><header class="sapMPageHeader"><div id="login-intHeader" data-sap-ui="login-intHeader" data-sap-ui-render="" data-sap-ui-fastnavgroup="true" aria-labelledby="login-intHeader-InvisibleText" role="toolbar" class="sapMIBar sapMIBar-CTX sapMBar sapMContent-CTX sapMBar-CTX sapMPageHeader sapMHeader-CTX sapContrastPlus sapMBarTitleAlignAuto"><div id="login-intHeader-BarLeft" class="sapMBarLeft sapMBarContainer sapMBarEmpty"></div><div id="login-intHeader-BarMiddle" class="sapMBarMiddle"><div id="login-intHeader-BarPH" class="sapMBarPH sapMBarContainer" style="width: 100%;"><h1 id="login-title" data-sap-ui="login-title" data-sap-ui-render="" class="sapMTitle sapMTitleStyleAuto sapMTitleNoWrap sapUiSelectable sapMTitleMaxWidth sapMBarChild"><span id="login-title-inner" dir="auto">Login - SAP SuccessFactors</span></h1></div></div><div id="login-intHeader-BarRight" class="sapMBarRight sapMBarContainer sapMBarEmpty"></div></div></header><section id="login-cont" class="sapMPageEnableScrolling sapUiScrollDelegate" style="overflow: hidden auto;"><div id="__layout5" data-sap-ui="__layout5" data-sap-ui-render="" class="sapUiVlt sapuiVlt mainAppContent"><div class="sapUiVltCell sapuiVltCell"><div id="__layout4" data-sap-ui="__layout4" data-sap-ui-render="" class="sapUiVlt sapuiVlt globalLoginLogoContainer"><div class="sapUiVltCell sapuiVltCell"><img id="__image1" data-sap-ui="__image1" data-sap-ui-render="" src="https://performancemanager5.successfactors.eu/doc/custom/ICRCPROD/logo.png" class="sapMImg sapMImgFocusable globalLoginLogoImg" alt="ICRC (Test 1) UAT Logo" aria-label="ICRC (Test 1) UAT Logo" title="ICRC (Test 1) UAT Logo"></div></div></div><div class="sapUiVltCell sapuiVltCell"><div class="loginMessage" data-sap-ui-preserve="__html6" id="__html6">To log in to company <span class="companyIDText">ICRCTEST1</span>, enter your user name and password below. You can also log in to <a href="/login?company=#/companyEntry" onclick="return enterDifferentCompanyID();">a different company</a>.</div></div><div class="sapUiVltCell sapuiVltCell"><form id="loginForm" data-sap-ui="loginForm" data-sap-ui-render="" class="bizLoginForm" action="/login" method="POST" autocomplete="off"><input type="hidden" name="bplte_userid" value=""><input type="hidden" name="company" value="ICRCTEST1"><div id="loginFormContent" data-sap-ui="loginFormContent" data-sap-ui-render="" data-sap-ui-customfastnavgroup="true" role="form" class="sapUiForm sapUiFormLblColon sapUiFormM"><div id="__layout3" data-sap-ui="__layout3" data-sap-ui-render="" class="sapUiFormResGrid sapUiFormBackgrTranslucent"><div id="__container1--Grid" data-sap-ui="__container1--Grid" data-sap-ui-render="" class="sapUiRespGrid sapUiRespGridHSpace0 sapUiRespGridVSpace0 sapUiFormResGridCont sapUiRespGridOverflowHidden sapUiRespGridMedia-Std-Phone"><div id="__container1--Grid-wrapperfor-__label1" class="sapUiRespGridBreak sapUiRespGridSpanXL2 sapUiRespGridSpanL2 sapUiRespGridSpanM2 sapUiRespGridSpanS12 sapUiFormElementLbl"><label id="__label1" data-sap-ui="__label1" data-sap-ui-render="" for="__input1-inner" class="sapMLabel sapUiSelectable sapMLabelWrapped sapMLabelMaxWidth sapMLabelDisplayOnly" style="text-align: left;"><span id="__label1-text" class="sapMLabelTextWrapper"><bdi id="__label1-bdi">User Name</bdi></span><span data-colon=":" aria-hidden="true" class="sapMLabelColonAndRequired"></span></label></div><div id="__container1--Grid-wrapperfor-__input1" class="sapUiRespGridSpanXL10 sapUiRespGridSpanL10 sapUiRespGridSpanM10 sapUiRespGridSpanS12"><div id="__input1" data-sap-ui="__input1" data-sap-ui-render="" data-ui5-accesskey="" class="sapMInputBase sapMInputBaseHeightMargin sapMInput sapMInputBaseHasEndIcons inputWithHelp username sapMFocus sapMInputFocused" style="width: 100%;"><div id="__input1-content" class="sapMInputBaseContentWrapper" style="width: 100%;"><input id="__input1-inner" name="username" value="" aria-labelledby="__label1" aria-describedby="__text1" type="text" autocomplete="off" class="sapMInputBaseInner" accesskey="1"><div tabindex="-1" class="sapMInputBaseIconContainer"><span id="__input1-vhi" data-sap-ui="__input1-vhi" data-sap-ui-render="" role="button" aria-label="Show Value Help" data-sap-ui-icon-content="" class="sapUiIcon sapUiIconPointer sapMInputBaseIcon" style="font-family: SAP-icons;"></span></div></div></div></div><div id="__container1--Grid-wrapperfor-__label2" class="sapUiRespGridBreak sapUiRespGridSpanXL2 sapUiRespGridSpanL2 sapUiRespGridSpanM2 sapUiRespGridSpanS12 sapUiFormElementLbl"><label id="__label2" data-sap-ui="__label2" data-sap-ui-render="" for="__input2-inner" class="sapMLabel sapUiSelectable sapMLabelWrapped sapMLabelMaxWidth sapMLabelDisplayOnly" style="text-align: left;"><span id="__label2-text" class="sapMLabelTextWrapper"><bdi id="__label2-bdi">Password</bdi></span><span data-colon=":" aria-hidden="true" class="sapMLabelColonAndRequired"></span></label></div><div id="__container1--Grid-wrapperfor-__input2" class="sapUiRespGridSpanXL10 sapUiRespGridSpanL10 sapUiRespGridSpanM10 sapUiRespGridSpanS12"><div id="__input2" data-sap-ui="__input2" data-sap-ui-render="" data-ui5-accesskey="" class="sapMInputBase sapMInputBaseHeightMargin sapMInput sapMInputBaseHasEndIcons inputWithHelp password" style="width: 100%;"><div id="__input2-content" class="sapMInputBaseContentWrapper" style="width: 100%;"><input id="__input2-inner" name="password" value="" aria-labelledby="__label2" aria-describedby="__text1" type="password" autocomplete="off" class="sapMInputBaseInner"><div tabindex="-1" class="sapMInputBaseIconContainer"><span id="__input2-vhi" data-sap-ui="__input2-vhi" data-sap-ui-render="" role="button" aria-label="Show Value Help" data-sap-ui-icon-content="" class="sapUiIcon sapUiIconMirrorInRTL sapUiIconPointer sapMInputBaseIcon" style="font-family: SAP-icons;"></span></div></div></div></div></div></div></div><a id="forgotPasswordLink" data-sap-ui="forgotPasswordLink" data-sap-ui-render="" href="#" tabindex="0" class="sapMLnk sapMLnkMaxWidth">Forgot Password?</a><button id="__button0" data-sap-ui="__button0" data-sap-ui-render="" data-ui5-accesskey="l" aria-describedby="__text2" class="sapMBtnBase sapMBtn sapMBtnInverted fullButton" type="button"><span id="__button0-inner" class="sapMBtnInner sapMBtnHoverable sapMFocusable sapMBtnText sapMBtnEmphasized"><span id="__button0-content" class="sapMBtnContent"><bdi id="__button0-BDI-content">Log in</bdi></span></span></button><input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" aria-hidden="true" data-sap-ui-preserve="__html5" id="__html5"></form></div><div class="sapUiVltCell sapuiVltCell"><div id="__container2" data-sap-ui="__container2" data-sap-ui-render="" class="surjContainer mobileLinkContainer"><span id="__icon0" data-sap-ui="__icon0" data-sap-ui-render="" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapUiIcon sapUiIconMirrorInRTL mobileActivationIcon" style="font-family: SAP-icons;"></span><a id="mobileActivationLink" data-sap-ui="mobileActivationLink" data-sap-ui-render="" href="#" tabindex="0" class="sapMLnk sapMLnkMaxWidth text">Activate Mobile App</a></div></div></div></section></div></div><div class="globalLoginFooter bizXFooter" data-sap-ui-preserve="__html1" id="__html1">
+      <span class="copyrightText">Copyright © <a class="link" rel="noopener" href="https://www.sap.com/products/human-resources-hcm.html?source=productlink-sfpm" onclick="window.open(this.href,'','noopener'); return false;">2024 SAP SuccessFactors, Inc.</a> All rights reserved. These online services are SuccessFactors confidential and proprietary and for use by authorized SuccessFactors customers only. </span><a class="versionInfoLink link" href="javascript:void(0);" id="version_info_link" onclick="sap.sf.login.bizx.BizXLogin.showVersionInfo(this); return false;">Show version information.</a>
+    </div></div></div>
+<div id="sfLoadBlockerLayer" style="position: absolute; z-index: 1001; inset: 0px; background-color: white; display: none;">
+	<div style="margin: 10rem auto 0.5rem auto; width: 6em;height: 3em text-align: center;" class="loadingIcon">
+		<div style="-webkit-animation: sapUiBusyAnimationStandard 1.8s infinite ease-in-out;
+					animation: sapUiBusyAnimationStandard 1.8s infinite ease-in-out;
+					-webkit-animation-fill-mode: both;
+					animation-fill-mode: both;
+					width: 2em;
+					height: 2em;
+					border-radius: 100%;
+					box-shadow: inset 0 0 3px .5em #009de0;
+					float: left;"></div>
+        <div style="-webkit-animation: sapUiBusyAnimationStandard 1.8s infinite ease-in-out;
+                    animation: sapUiBusyAnimationStandard 1.8s infinite ease-in-out;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                    width: 2em;
+                    height: 2em;
+                    border-radius: 100%;
+                    box-shadow: inset 0 0 3px .5em #009de0;
+                    float: left;"></div>
+        <div style="-webkit-animation: sapUiBusyAnimationStandard 1.8s infinite ease-in-out;
+                    animation: sapUiBusyAnimationStandard 1.8s infinite ease-in-out;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                    width: 2em;
+                    height: 2em;
+                    border-radius: 100%;
+                    box-shadow: inset 0 0 3px .5em #009de0;
+                    float: left;"></div>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">try {PerfLog.addOnloadHook();} catch(err) {}</script>
+
+
+
+
+<div aria-hidden="true" id="sap-ui-preserve" class="sapUiHidden sapUiForcedHidden" style="width: 0px; height: 0px; overflow: hidden;"></div></body></html>

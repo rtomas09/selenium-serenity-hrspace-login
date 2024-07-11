@@ -1,0 +1,88 @@
+System.setProperty("user.dir", projectDir.toString())
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'net.serenity-bdd.aggregator'
+//apply plugin: "com.github.ManifestClasspath"
+
+group 'org.icrc.hrspace'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+//    jcenter()
+    mavenCentral()
+}
+
+ext {
+    serenity_version = "2.1.6"
+    junit_version = "4.12"
+    logback_version = '1.2.3'
+}
+
+buildscript {
+    ext {
+        serenity_version = "2.1.6"
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+//        jcenter()
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:${serenity_version}")
+//        classpath "gradle.plugin.com.github.viswaramamoorthy:gradle-util-plugins:0.1.0-RELEASE"
+    }
+}
+
+dependencies {
+    compile "net.serenity-bdd:serenity-core:${serenity_version}"
+    compile "net.serenity-bdd:serenity-junit:${serenity_version}"
+    compile "ch.qos.logback:logback-classic:${logback_version}"
+    testCompile "junit:junit:${junit_version}"
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile group: 'com.mailosaur', name: 'mailosaur-java', version: '6.0.0'
+    compile ('com.google.guava:guava:25.0-jre') { force = true }
+
+}
+
+task debug {
+    doLast {
+        println 'https.proxyHost = ' + System.getProperty("https.proxyHost")
+        println 'https.proxyPort = ' + System.getProperty("https.proxyPort")
+        println 'http.proxyHost = ' + System.getProperty("http.proxyHost")
+        println 'https.proxyPort = ' + System.getProperty("http.proxyPort")
+    }
+}
+
+task writeJsonTestDataFiles (type: JavaExec) {
+    group = "Execution"
+    description = "Write test data JSON file"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'utils.ProcessTestData'
+}
+
+task testMailosaur (type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'utils.MailosaurAPIClient'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
+
+    filter
+    /* Pass all system properties: */
+    systemProperties System.getProperties()
+    dependsOn 'cleanTest'
+}
+
+gradle.startParameter.continueOnFailure = true

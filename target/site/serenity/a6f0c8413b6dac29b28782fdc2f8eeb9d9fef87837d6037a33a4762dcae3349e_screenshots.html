@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="db13ae94c67988d66d05ef839490a86b175a468f76a79b7e41e60f0421ec1031.html">Employee Data</a></span>
+                > <span class="truncate-60"><a
+                    href="a6f0c8413b6dac29b28782fdc2f8eeb9d9fef87837d6037a33a4762dcae3349e.html">CH ED08 LM </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 10-05-2024 02:40</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Employee Data</span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">CH ED08 LM
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" Given that I'm logged in to HR space as 'Christoph VOGT'" width="941"/>
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" Given that I'm logged in to HR space using 'A960824' account" width="941"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A960824' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A960824" width="1931"/>
+                <img src="5c5c6051f84ca751d532a70ab743426353b8e75dd27f88f7be1113204e42e984.png" title=" Then user inputs username: A960824 (completed)" width="1931"/>
+                <img src="5c5c6051f84ca751d532a70ab743426353b8e75dd27f88f7be1113204e42e984.png" title=" Then user inputs password: nrt2023HRIS#" width="1931"/>
+                <img src="74c672848211fb2194a5e10fc7806ad6a6faaa87927968eb48219b35a4b8ed69.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1931"/>
+                <img src="74c672848211fb2194a5e10fc7806ad6a6faaa87927968eb48219b35a4b8ed69.png" title=" Then user clicks login button" width="1931"/>
+                <img src="dc731eccf7cf042384ae9ca37b03655d5cbbf375bdbca16e72faaf6dd4946aac.png" title=" Then user clicks login button" width="1931"/>
+                <img src="d32fed2553d29560280d0bac8fc41ffb22ea6993ed9f8a369dfc433f5768337e.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="d32fed2553d29560280d0bac8fc41ffb22ea6993ed9f8a369dfc433f5768337e.png" title=" Given that I'm logged in to HR space using 'A960824' account (completed)" width="1931"/>
+                <img src="d32fed2553d29560280d0bac8fc41ffb22ea6993ed9f8a369dfc433f5768337e.png" title=" Given that I'm logged in to HR space as 'Christoph VOGT' (completed)" width="1931"/>
+                <img src="a0b8054b71ae4ca2623d717ec85997891d318770e715885001dfb03e31e520dd.png" title=" When i search for an employee using the header search bar: Geert DE VRIES" width="1931"/>
+                <img src="a0b8054b71ae4ca2623d717ec85997891d318770e715885001dfb03e31e520dd.png" title=" When i search employee: Geert DE VRIES" width="1931"/>
+                <img src="a0b8054b71ae4ca2623d717ec85997891d318770e715885001dfb03e31e520dd.png" title=" When i click all actions" width="1931"/>
+                <img src="63d2b4fad7fcff8d9f210a5c279025e15d58c0c1809b728ab9a327673193a497.png" title=" When i click all actions (completed)" width="1931"/>
+                <img src="63d2b4fad7fcff8d9f210a5c279025e15d58c0c1809b728ab9a327673193a497.png" title=" When i search profile" width="1931"/>
+                <img src="862c97b506644aed2b0dffd4d5d1aeabd639f09f830917e0702578d6a09db82f.png" title=" When i search profile (completed)" width="1931"/>
+                <img src="862c97b506644aed2b0dffd4d5d1aeabd639f09f830917e0702578d6a09db82f.png" title=" When i click profile" width="1931"/>
+                <img src="fa77a8791002a78977cfe0772d8ce21de8e892fc4f6a8e9e7b12f24e0ba4e34f.png" title=" When i click profile (completed)" width="1931"/>
+                <img src="c1678437f29c8998dedf258a4de737bd3777f0e73ae9ce22baca812e78f5d305.png" title=" When i search for an employee using the header search bar: Geert DE VRIES (completed)" width="1931"/>
+                <img src="b41f6c69dd2fc44f2f5282186efe78b5076e5d1f64d367bdc92fdbb3fc4f5f44.png" title=" When i go to biographical info" width="1931"/>
+                <img src="8a37980c07bb12865bbb4d03fceaaf038598b1bc5c535ba2d9a5e25df18c852b.png" title=" When i go to biographical info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" When i go to biographical info (completed)" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the edit property of biographical info fields for LM should be correctly set" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the read and write property of biographical info fields should be correct: view, view, view, view, view, &lt;null&gt;, view" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should be view only: Employee ID, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should be view only: Date of birth, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should be view only: Town of birth, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should be view only: County of birth, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should be view only: Country Of Birth, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should not be present: Date of death, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the field should be view only: Interface Routing, Biographical Info" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the read and write property of biographical info fields should be correct: view, view, view, view, view, &lt;null&gt;, view (completed)" width="1931"/>
+                <img src="e225d7a05987d377edc17854abee08c1bcfc428b3b455b0ddf82381ba340ca70.png" title=" Then the edit property of biographical info fields for LM should be correctly set (completed)" width="1931"/>
+                <img src="2da205c330bf2249789f881c11487ddc43aca14fb36ffa991ffb4cce68f797a5.png" title=" When i go to personal info" width="1931"/>
+                <img src="abb9ea1e5e98b6cfe1c595da4064217352415a5119f16b84932c6c7c36c33719.png" title=" When i go to personal info" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" When i go to personal info (completed)" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the edit property of personal info fields for LM should be correctly set" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the read and write property of personal info should be correct: view, view, view, view, view, view, view, view, view, view, &lt;null&gt;, &lt;null&gt;, view, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Title, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: First Name, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Last Name, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Maiden Name, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Preferred First Name, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Preferred Last Name, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Gender, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Nationality at birth, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Current nationality, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Other nationality, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Marital Status, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Marital Status Since, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should be view only: Mailing Preferred Language, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Religion, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Ethnic group, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Number of children, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Date of Death, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: PeopleNet Person ID, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the field should not be present: Rapid Deployment, Personal Information" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the read and write property of personal info should be correct: view, view, view, view, view, view, view, view, view, view, &lt;null&gt;, &lt;null&gt;, view, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="ed3a3d7801a2b0f1006e9f7b9a0adcddabef491877e0a32d2ffb90b38b5e9cf4.png" title=" Then the edit property of personal info fields for LM should be correctly set (completed)" width="1931"/>
+                <img src="53496613844d6616e1815352a1c9fd19d34159874417db8ef5001893e39aedd1.png" title=" When i go to employment details" width="1931"/>
+                <img src="cde7eb4563a1dba39f74beffb5877376b4c21a9c916b479eaab1b70685e47fde.png" title=" When i go to employment details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" When i go to employment details (completed)" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the edit property of employment details for LM should be correctly set" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should be view only: Hire Date, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should be view only: Start date of 1st ICRC contract, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should not be present: EoSI start date, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should not be present: Effective length of service, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should not be present: Y-1 nb of working years, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should be view only: iDevelop Lenght of Service, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should not be present: iDevelop eligibility, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the field should not be present: Office Number, Employment Details" width="1931"/>
+                <img src="4c2e9a2087625c330c95482439eb0a8e101661c020457ba8050942f9b941a024.png" title=" Then the edit property of employment details for LM should be correctly set (completed)" width="1931"/>
+                <img src="a96141e67444dab07263d16a7ce92d5d92da63d835f61b47ec9df6737dd63449.png" title=" When i go to job relationship" width="1931"/>
+                <img src="28ab3d21a0e2ddc65195f8a5298477939eb62ecadcc7798842a9a07291120871.png" title=" When i go to job relationship" width="1931"/>
+                <img src="e6e6bdbf74898f76c30031bebc483977097c20eda00a621c03b70136651cd788.png" title=" When i go to job relationship (completed)" width="1931"/>
+                <img src="803b4fcf0a2c6707aa071e8954bc3be6d41ba059d4f533b9fc53585e5bb5bce0.png" title=" Then the edit property of job relationship for LM should be correctly set" width="1931"/>
+                <img src="803b4fcf0a2c6707aa071e8954bc3be6d41ba059d4f533b9fc53585e5bb5bce0.png" title=" Then job relationship field should be view only: Job Relationships" width="1931"/>
+                <img src="803b4fcf0a2c6707aa071e8954bc3be6d41ba059d4f533b9fc53585e5bb5bce0.png" title=" Then the edit property of job relationship for LM should be correctly set (completed)" width="1931"/>
+                <img src="9a706579bc79c74f8f5f52d3f66b07d6835e6c1ed67c04f0f058753940a70041.png" title=" When i go to job info" width="1931"/>
+                <img src="5f28269a06e91c9b46fbb0890b6ade5f97f7396b27066b306ddfd26c0c10b25f.png" title=" When i go to job info" width="1931"/>
+                <img src="efd434bd66761465476afee966c47ec44ae3f671483c5cd672f8910fa2db3308.png" title=" When i go to job info (completed)" width="1931"/>
+                <img src="efd434bd66761465476afee966c47ec44ae3f671483c5cd672f8910fa2db3308.png" title=" Then the edit property of job info for LM should be correctly set: 10/05/2024" width="1931"/>
+                <img src="efd434bd66761465476afee966c47ec44ae3f671483c5cd672f8910fa2db3308.png" title=" Then the field should not be present: Event, Job Information" width="1931"/>
+                <img src="70ec872c4dc150d24b5caf9627104e8e8ca0f33fd31c16a0e229b2814970b301.png" title=" Then field is displayed under history modal: Position, Job Information, Position Information" width="1931"/>
+                <img src="789fa2c8d2b0da814af3b75349b508306bdcc8ef841fdb13dc764dd0dc451be1.png" title=" Then field is displayed under history modal: Position, Job Information, Position Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Position, Job Information, Position Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Assignment start date, Job Information, Position Information" width="1931"/>
+                <img src="3bb2f1389f099bb9522ff5455f6a67ba46420a42d3267df6db9e11b281304734.png" title=" Then field is displayed under history modal: Assignment start date, Job Information, Position Information" width="1931"/>
+                <img src="3c16124ac49052cf8ced97243b89256faba8ea2e758e5f8c1069494193e073cd.png" title=" Then field is displayed under history modal: Assignment start date, Job Information, Position Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Assignment start date, Job Information, Position Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Cost Center, Job Information, Organization Information" width="1931"/>
+                <img src="3bb2f1389f099bb9522ff5455f6a67ba46420a42d3267df6db9e11b281304734.png" title=" Then field is displayed under history modal: Cost Center, Job Information, Organization Information" width="1931"/>
+                <img src="3facd68247801be4ba9939b76386103639b0dc9969a650548340064afb0937b0.png" title=" Then field is displayed under history modal: Cost Center, Job Information, Organization Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Cost Center, Job Information, Organization Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Legal entity, Job Information, Organization Information" width="1931"/>
+                <img src="3bb2f1389f099bb9522ff5455f6a67ba46420a42d3267df6db9e11b281304734.png" title=" Then field is displayed under history modal: Legal entity, Job Information, Organization Information" width="1931"/>
+                <img src="3c16124ac49052cf8ced97243b89256faba8ea2e758e5f8c1069494193e073cd.png" title=" Then field is displayed under history modal: Legal entity, Job Information, Organization Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Legal entity, Job Information, Organization Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Work Unit, Job Information, Organization Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Work Unit, Job Information, Organization Information" width="1931"/>
+                <img src="2ac1dc8833085a5ef2f60a6a5e9f06628ba320a746c661f6f6b3fb39aa2c1629.png" title=" Then field is displayed under history modal: Work Unit, Job Information, Organization Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Work Unit, Job Information, Organization Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Location, Job Information, Organization Information" width="1931"/>
+                <img src="84cd570200d7aa2418b3771733515d37abb09c5f151977ddb9c181441d590b55.png" title=" Then field is displayed under history modal: Location, Job Information, Organization Information" width="1931"/>
+                <img src="b5d986f80d0fbfd26d1d55666a57d1ad263ce7d7b03bfb2ca74ea36428435da7.png" title=" Then field is displayed under history modal: Location, Job Information, Organization Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Location, Job Information, Organization Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Delegation, Job Information, Organization Information" width="1931"/>
+                <img src="3bb2f1389f099bb9522ff5455f6a67ba46420a42d3267df6db9e11b281304734.png" title=" Then field is displayed under history modal: Delegation, Job Information, Organization Information" width="1931"/>
+                <img src="4af79c6254c8e2b78eed2927c67a9ad059d7d27df8b510ad01b96076b08c70e7.png" title=" Then field is displayed under history modal: Delegation, Job Information, Organization Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Delegation, Job Information, Organization Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Timezone, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Timezone, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Region, Job Information, Organization Information" width="1931"/>
+                <img src="3bb2f1389f099bb9522ff5455f6a67ba46420a42d3267df6db9e11b281304734.png" title=" Then field is displayed under history modal: Region, Job Information, Organization Information" width="1931"/>
+                <img src="609970fb0158ed4bccd5f53c1f3d9f52223afe53b8d5604b93bacc201377cf4e.png" title=" Then field is displayed under history modal: Region, Job Information, Organization Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Region, Job Information, Organization Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Hardship Level, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Hardship Level, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Cost of Living Level, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Cost of Living Level, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Country, Job Information, Job Information" width="1931"/>
+                <img src="3bb2f1389f099bb9522ff5455f6a67ba46420a42d3267df6db9e11b281304734.png" title=" Then field is displayed under history modal: Country, Job Information, Job Information" width="1931"/>
+                <img src="5e922e5c3ae905cd462f050dd7fb0dc91231f02f4f6c22195ee34dd56891b432.png" title=" Then field is displayed under history modal: Country, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Country, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Assignment estimated end date, Job Information, Job Information" width="1931"/>
+                <img src="594e81cd224fe2eeb048465830d7e4e5af7b3e60b59d8fe5d1be7a8b8d284006.png" title=" Then field is displayed under history modal: Assignment estimated end date, Job Information, Job Information" width="1931"/>
+                <img src="ba736426407733b61967c3b5547a100ec816749a1579b383a0ae20edb5f8a435.png" title=" Then field is displayed under history modal: Assignment estimated end date, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Assignment estimated end date, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Contract estimated end date, Job Information, Job Information" width="1931"/>
+                <img src="aaabafa905ce0409b5f96dd7c1ccb9bee6b9cc5ef4bd69477028f1b8417e0ffb.png" title=" Then field is displayed under history modal: Contract estimated end date, Job Information, Job Information" width="1931"/>
+                <img src="a03a8b704804ed7d99f1f5a441aaa6764f9d1e0acedb92748c402a3bfd31b66c.png" title=" Then field is displayed under history modal: Contract estimated end date, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Contract estimated end date, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Critical position, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Critical position, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Mobility Position type, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Mobility Position type, Job Information, Job Information" width="1931"/>
+                <img src="3891d872dde9b5332e899381ef59bc98adc96800465a7f66959fcb2175552fe0.png" title=" Then field is displayed under history modal: Mobility Position type, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Mobility Position type, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Position type, Job Information, Job Information" width="1931"/>
+                <img src="70ec872c4dc150d24b5caf9627104e8e8ca0f33fd31c16a0e229b2814970b301.png" title=" Then field is displayed under history modal: Position type, Job Information, Job Information" width="1931"/>
+                <img src="d6c93d89b311730fe0ba236dd163e98f9baff241ab84a48ac8656c1b276513b7.png" title=" Then field is displayed under history modal: Position type, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Position type, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should be view only: Line manager, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should be view only: Line manager, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Sub-family, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Sub-family, Job Information, Job Information" width="1931"/>
+                <img src="331c12725e8c22e1314d725095127f0adf101723b8c93ada03f904c5cbc50463.png" title=" Then field is displayed under history modal: Sub-family, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Sub-family, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Job, Job Information, Job Information" width="1931"/>
+                <img src="0a3e0ff6bc26b68708e4fe8f380d51707afed5391c15aa93c91ebbdba98c584d.png" title=" Then field is displayed under history modal: Job, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job name, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Job name, Job Information, Job Information" width="1931"/>
+                <img src="6e073f9d48f4c36af96660c051673d3a303f632764a0f9a68caa4213b0667772.png" title=" Then field is displayed under history modal: Job name, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job name, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Parent job code, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Parent job code, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job category, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Job category, Job Information, Job Information" width="1931"/>
+                <img src="56c21dbb0bf5d4f27ca65a7da9aab34974c6e23fe0c435a993456c660931d54d.png" title=" Then field is displayed under history modal: Job category, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job category, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job level, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Job level, Job Information, Job Information" width="1931"/>
+                <img src="7a114b51cfb32d41316931d9f93e13f7c4311807df99f7709f0f00e99d43df09.png" title=" Then field is displayed under history modal: Job level, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Job level, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Effective Weekly Hours, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Effective Weekly Hours, Job Information, Job Information" width="1931"/>
+                <img src="fcf8b3d71a04e8c29eeb39e530bc65a8de3b9423da486bf3a558c6e36c933658.png" title=" Then field is displayed under history modal: Effective Weekly Hours, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Effective Weekly Hours, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: FTE, Job Information, Job Information" width="1931"/>
+                <img src="f290cadd2a82e564076e397e470a854f892fdbdb15cba49e0a379565bd47fbca.png" title=" Then field is displayed under history modal: FTE, Job Information, Job Information" width="1931"/>
+                <img src="1ee306a9c8e7d16b0be7a579b66b54823e640a50164faeb749b674dc058cbb38.png" title=" Then field is displayed under history modal: FTE, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: FTE, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Probation Period End Date, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Probation Period End Date, Job Information, Job Information" width="1931"/>
+                <img src="6dd96b0fc173830871802d34469b374e2e43077f6a1b3bbef3735b20ec21e921.png" title=" Then field is displayed under history modal: Probation Period End Date, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Probation Period End Date, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Comments, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Comments, Job Information, Job Information" width="1931"/>
+                <img src="af13a29b17660a3d20a82adee4050d8b61da6b401af664847ffe25b44b700cdb.png" title=" Then field is displayed under history modal: Comments, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Comments, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Family, Job Information, Job Information" width="1931"/>
+                <img src="07be8b6816445305b82fa985c86e1eda8c7c89d4e12b8c1dd2cc7b2376ba2718.png" title=" Then field is displayed under history modal: Family, Job Information, Job Information" width="1931"/>
+                <img src="98c3f740662ebcaa6683587ec5571dc75398deed4bc619efc5ea705eb09fd611.png" title=" Then field is displayed under history modal: Family, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Family, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: National society code, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: National society code, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Position Grade, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Position Grade, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Position-Person Fit, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Position-Person Fit, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Confirmed, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Confirmed, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Template Week code, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Template Week code, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Contract type, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Contract type, Job Information, Job Information" width="1931"/>
+                <img src="6ec19a69493831dd2a2a04bbfdbbdff4365a734e9cec02255fb1f5e1ad0e8f87.png" title=" Then field is displayed under history modal: Contract type, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Contract type, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Employee Talent Pool, Job Information, Job Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Employee Talent Pool, Job Information, Job Information" width="1931"/>
+                <img src="f2bb8fd38b38ba2419446bf1fbfc718301b9d15946107b86c81f7b8da5f161b4.png" title=" Then field is displayed under history modal: Employee Talent Pool, Job Information, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Employee Talent Pool, Job Information, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Pay Range ID, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Pay Range ID, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Assignment Mailing Language, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Assignment Mailing Language, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Hardship Incentive Option, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: Hardship Incentive Option, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: In between missions, Job Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the field should not be present: In between missions, Job Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Work Schedule, Job Information, Time Information" width="1931"/>
+                <img src="f290cadd2a82e564076e397e470a854f892fdbdb15cba49e0a379565bd47fbca.png" title=" Then field is displayed under history modal: Work Schedule, Job Information, Time Information" width="1931"/>
+                <img src="784873f57f3b073b3185716a4e1d5bdc9daa6365d6aed3873f746eeff5323183.png" title=" Then field is displayed under history modal: Work Schedule, Job Information, Time Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Work Schedule, Job Information, Time Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Holiday Calendar, Job Information, Time Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Holiday Calendar, Job Information, Time Information" width="1931"/>
+                <img src="0ed571b0544425f21a088c9a046034b34322af3dc7c52ab266947d61e55f84b7.png" title=" Then field is displayed under history modal: Holiday Calendar, Job Information, Time Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Holiday Calendar, Job Information, Time Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Time Profile, Job Information, Time Information" width="1931"/>
+                <img src="384094e92bae5b381d625dc810bddcc284cdd2a3e639457d0473cf2a220b5abd.png" title=" Then field is displayed under history modal: Time Profile, Job Information, Time Information" width="1931"/>
+                <img src="1f7ce9da4c4ccb7aba821b89b7a989c3e7d628c325ab23a4de0cea671f896efc.png" title=" Then field is displayed under history modal: Time Profile, Job Information, Time Information" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then field is displayed under history modal: Time Profile, Job Information, Time Information (completed)" width="1931"/>
+                <img src="6362c62ddce7fd9488a2f05bb7db5299aa026375894243b0a228a0cbf156adee.png" title=" Then the edit property of job info for LM should be correctly set: 10/05/2024 (completed)" width="1931"/>
+                <img src="3b4c7772739e152f9311d497ef7771705cdb228370391438b0668504958145b7.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="5d7df8424e615b839544369b8cda0a56a099e91fb44204b90c5dc2812d5abacd.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then the edit property of my office home working days for LM should be correctly set" width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: My contractual activity rate, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: My current country of assignment, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: My current mailing address, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Monday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Monday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Tuesday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Tuesday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Wednesday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Wednesday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Thursday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Thursday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Friday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Friday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Saturday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Saturday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Sunday morning, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Sunday afternoon, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Activity rate (calculated), My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: On site rate (calculated), My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then field is displayed under history modal: Home office rate (calculated), My Office/Home Working Days, " width="1931"/>
+                <img src="f12c61e1d0657338cf0556e386360c10f3aa446b3955de4717f8666316e5b1a4.png" title=" Then the edit property of my office home working days for LM should be correctly set (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
